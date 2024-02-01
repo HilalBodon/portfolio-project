@@ -1,51 +1,52 @@
 import React from 'react'
 import Toggle from '../Toggle/Toggle'
 import './Navbar.css'
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom'; 
 
+import Logo from '../../img/hanadiLogo.png'
+import nameLogo from '../../img/nameLogo.png'
+
+import { themeContext } from '../../Context'
+import { useContext } from "react";
+    
 function Navbar() {
-  return (
-<div className="n-wrapper">
 
-    <div className="n-left">
-        <div className="n-name">Andrew</div>
-            <Toggle/>
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
+
+    return (
+      <div className="n-wrapper" style = {{background:darkMode ? '#242D49' : '' }}>
+        <div className="n-left">
+          <img src={Logo} alt="logo" className="n-logo" />
+          <img src={nameLogo} alt="namelogo" className="n-namelogo" />
+          <Toggle />
         </div>
-
-    <div className="n-right">
-        <div className="n-list">
-            <ul className='UL'>
-                <li>
-                    <Link spy={true} to='Navbar' smooth={true} activeClass='activeClass'>
-                        Home
-                    </Link>
-                </li>
-                <li> 
-                    <Link spy={true} to='Services' smooth={true} >
-                    Services
-                    </Link>
-                </li>
-                <li>
-                    <Link spy={true} to='Experience' smooth={true} >
-                    Experience
-                    </Link>
-                </li>
-                <li> 
-                    <Link spy={true} to='Portfolio' smooth={true} >
-                    Portfolio
-                    </Link>
-                </li>
-                <li>
-                    <Link spy={true} to='Testimonials' smooth={true} >
-                    Testimonials
-                    </Link>
-                </li>
+  
+        <div className="n-right">
+          <div className="n-list">
+            <ul className="UL">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/experience">Experience</Link>
+              </li>
+              <li>
+                <Link to="/portfolio">Portfolio</Link>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
             </ul>
+          </div>
+          {/* <button className="button n-button">Contact</button> */}
         </div>
-        <button className="button n-button">Contact</button>
-    </div>
-</div>
-    )
-}
-
-export default Navbar
+      </div>
+    );
+  }
+  
+  export default Navbar;

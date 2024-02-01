@@ -9,7 +9,7 @@
     width: 10rem;
     text-align: center;
     background: rgba(255, 255, 255, 0.26 );
-    border: 7px solid var(--orangeCard);
+    /* border: 3px solid var(--orangeCard); */
     box-shadow: var(--boxShadow);
     border-radius: 20px;
     padding: 0px 26px 2rem 26px;
@@ -32,6 +32,7 @@
     border: none;
     font-size: 16px;
     color: #5290fd;
+    cursor: pointer;
 }
 
 @media screen and (max-width:480px) {

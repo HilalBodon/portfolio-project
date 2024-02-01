@@ -28,7 +28,7 @@ const Works = () => {
                 <br />
                 Saepe fugit explicabo consequatur 
             </span>
-            <button className="button s-button">Hire Me</button>
+            <button className="button s-button">Invite Me</button>
             <div className="blur s-blur1" style={{background:'#ABF1FF94'}}></div>
         </div>
         {/* rightside */}
