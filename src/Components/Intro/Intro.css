@@ -1,8 +1,16 @@
 .intro{
     display: flex;
-    height:77vh;
+    flex-direction: column;
     padding: 8rem 3rem 3rem 3rem;
+    gap: 5rem;
 }
+
+.intro-intro{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
 
 .i-left{
     display: flex;
@@ -10,6 +18,7 @@
     flex: 1;
     flex-direction: column;
     gap: 2rem;
+    justify-content: flex-end;
 }
 
 .i-name{
@@ -30,9 +39,9 @@ flex-direction: column;
 }
 
 .i-name>:nth-child(3){
-    color: var(--gray);
-    font-weight: 100;
-    font-size: 14px;
+    color: var(--black);
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .i-button{
@@ -71,29 +80,30 @@ cursor: pointer;
     z-index: 1;
 }
 
-/* .i-right>:nth-child(1){
-    transform: scale(0.69);
-    left: -15%;
-    top: -9%;
+.i-right>:nth-child(4){
+    transform: scale(0.40);
+    /* left: -15%; */
+    /* top: 40%; */
 }
 
-.i-right>:nth-child(2){
-    transform: scale(0.67);
+.i-right>:nth-child(3){
+    transform: scale(0.2);
     left: -3rem;
     top: -4.6%; 
-} */
+}
 
 .i-right>:nth-child(1){
 
     height: 80vh;
     top: -3%;
+    left:15%
 }
 
-.i-right>:nth-child(4){
+.i-right>:nth-child(2){
     transform: scale(0.3);
-    left: -24%;
-    top: -19%;
-    padding: 0;
+    left: -5%;
+    top: -30%;
+    /* padding: 0; */
 }
 
 .fd-right-up{

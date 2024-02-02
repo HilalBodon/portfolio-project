@@ -1,6 +1,7 @@
 .services{
     padding: 0 3rem 0 3rem;
     display: flex;
+    
     height: 90vh;
     margin-top: 9rem;
     margin-bottom: 13rem;
@@ -31,9 +32,9 @@
 }
 
 .s-button{
-    width: 8rem;
-    height: 2rem;
-    margin-top: 1rem;
+    width: 11rem;
+    height: 2.5rem;
+    margin-top: 3rem;
 }
 
 .cards{

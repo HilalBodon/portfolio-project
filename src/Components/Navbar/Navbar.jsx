@@ -36,7 +36,7 @@ function Navbar() {
                 <Link to="/experience">Experience</Link>
               </li>
               <li>
-                <Link to="/portfolio">Portfolio</Link>
+                <Link to="/books">Books</Link>
               </li>
               <li>
                 <Link to="/blog">Blog</Link>

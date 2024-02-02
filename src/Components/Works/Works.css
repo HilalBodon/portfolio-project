@@ -1,8 +1,9 @@
 .works{
-    padding: 0 3rem 0 3rem;
+    /* padding: 0 3rem 0 3rem; */
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     height: 90vh;
-    margin-top: 4rem;
 }
 
 .w-right{
@@ -10,7 +11,6 @@
 }
 
 .w-mainCircle{
-    left: 9rem;
     position: relative;
     width: 18rem;
     height: 18rem;
@@ -97,7 +97,7 @@
     .w-right{
         display: flex;
         align-items: flex-start;
-        justify-content: start;
+        justify-content: flex-start;
         transform: scale(0.7);
     }
     .w-mainCircle{

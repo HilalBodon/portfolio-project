@@ -6,10 +6,16 @@ import Facebook from '@iconscout/react-unicons/icons/uil-facebook'
 import Github from '@iconscout/react-unicons/icons/uil-github'
 import Logo from '../../img/hanadiLogo.png'
 import { Link } from 'react-router-dom'; 
-
+import { themeContext } from '../../Context'
+import { useContext } from "react";
+    
 const Footer = () => {
+
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
+
   return (
-    <div className="footer">
+    <div className="footer" style = {{background:darkMode ? '#242D49' : '' }}>
         {/* <img src={Wave} alt="wave" style={{width:'100%'}} /> */}
         <div className="f-content">
             <span>Hilal.bodon@hotmail.com</span>
@@ -21,6 +27,7 @@ const Footer = () => {
 
             </div>
             <img src={Logo} alt="hanadi logo" className='f-logo' />
+            <span><b>Quad Digital Media</b> Copyright 2024 All rights reserved.</span>
         </div>
     </div>
     )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './Works.css'
 import Upwork from '../../img/Upwork.png';
 import Fiverr from '../../img/fiverr.png'
@@ -7,7 +7,8 @@ import Shopify from '../../img/Shopify.png'
 import Facebook from '../../img/Facebook.png'
 import { themeContext } from '../../Context'
 import { useContext } from "react";
-import {motion} from 'framer-motion';    
+import {motion} from 'framer-motion';  
+
 const Works = () => {
 
     const transition = {duration:3.5 , type: 'spring'}
