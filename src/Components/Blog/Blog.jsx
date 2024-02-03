@@ -131,7 +131,7 @@ const Blog = () => {
             <p>{modifyDate(blogData[0].createdAt)}</p>
           </>
         ) : (
-          <p>No blog data available</p>
+          <p>Loading Blogs .....</p>
         )}
       </div>
 
