@@ -11,7 +11,9 @@
 }
 
 .t-heading{
-    align-self: start;
+    align-self: center;
+    padding: 4rem;
+
 }
 
 .t-heading>*{
@@ -86,8 +88,8 @@ border-radius: 100%;
     align-items: center;
     flex-direction: column;
     gap: 3rem;
-    padding: 2rem;
-    width: 70vw;
+    /* padding: 2rem; */
+    width: 60vw;
 }
 .featuredBlog img{
     border-radius: 15%;

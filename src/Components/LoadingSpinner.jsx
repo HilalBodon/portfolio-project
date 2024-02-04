@@ -1,6 +1,6 @@
 import React from "react";
 // import { RingLoader } from "react-spinners";
-import { BarLoader } from "react-spinners";
+import { RingLoader	 } from "react-spinners";
 
 
 const LoadingSpinner = () => {
@@ -10,10 +10,10 @@ const LoadingSpinner = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        height: "50vh",
       }}
     >
-      <BarLoader color="#36D7B7" loading={true} size={150} />
+      <RingLoader	 color="#C87167" loading={true} size={100} />
     </div>
   );
 };

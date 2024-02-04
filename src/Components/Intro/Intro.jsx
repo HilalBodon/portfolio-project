@@ -17,6 +17,7 @@ import { useContext } from "react";
 import {motion} from 'framer-motion';
 import Works from '../Works/Works'
 import Blog from '../Blog/Blog'
+import Books from '../Books/Books'
 
 const Intro =() =>{
     // const transition = { ease: [0.42, 0, 0.58, 1], type: 'spring' };
@@ -102,11 +103,14 @@ const Intro =() =>{
 
             </motion.div> */}
 
-            <div className="blur" style={{background: "rgb(238, 210, 255)"}}></div>
-            <div className="blur" style={{background: "#c1f5ff", top:'17rem', width:'21rem', height:'11rem', left:'-9rem'}}></div>
+            <div className="blur" style={{background: "rgba(50, 50, 50, 0.258)", top:'7rem'} }></div>
+            <div className="blur" style={{background: "rgba(252, 167, 31, 0.258)", top:'22rem', width:'21rem', height:'11rem', left:'-15rem'}}></div>
+            <div className="blur" style={{background: "rgba(50, 50, 50, 0.258)", top:'0rem', left:'-5rem'} }></div>
+
         </div>
         </div>
         <Works/>
+        <Books/>
         <Blog/>
 
     </div>

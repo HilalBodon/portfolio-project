@@ -90,15 +90,11 @@ const Books = () => {
           <span>Books</span>
         </div>
   
-        {/* Check loading status */}
         {loading ? (
-          // Display loading spinner while data is being fetched
           <LoadingSpinner />
             ) : error ? (
-                // Display error message if there is an error
                 <div className="error-message">{error}</div>
               ) : (
-          // Display Swiper when data is loaded
           <Swiper {...swiperConfig}>
             {booksData.map((book, index) => (
               <SwiperSlide key={index}>

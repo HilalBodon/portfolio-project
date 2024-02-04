@@ -92,12 +92,22 @@ cursor: pointer;
     top: -4.6%; 
 }
 
-.i-right>:nth-child(1){
 
+.i-right > :nth-child(1) {
+    position: relative;
     height: 80vh;
-    top: -3%;
-    left:15%
-}
+    top: 5%;
+    left: 15%;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    transition: transform 0.3s ease-in-out;
+ 
+  }
+  
+  .i-right > :nth-child(1):hover {
+    transform: scale(1.1); /* Enlarge the image on hover */
+  }
+  
 
 .i-right>:nth-child(2){
     transform: scale(0.3);
