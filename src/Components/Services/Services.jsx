@@ -1,20 +1,49 @@
-import React from 'react'
+import React, { useContext, useState ,useEffect} from 'react'
 import './Services.css'
 import HeartEmoji from '../../img/heartemoji.png'
 import Glasses from '../../img/glasses.png'
 import Humble from '../../img/humble.png'
 import Card from '../Card/Card'
-import Resume from './Resume.pdf'
 import { themeContext } from '../../Context'
-import { useContext } from "react";
 import {motion} from 'framer-motion'
+import axios from 'axios'
+
+const BaseURL = process.env.REACT_APP_BASE_URL;
+const Headers = {
+  'X-BEA-Application-Id': process.env.REACT_APP_API_KEY,
+  'X-BEA-Authorization': process.env.REACT_APP_AUTHORIZATION_TOKEN,
+};
 
 const Services = () => {
+
     const transition = {duration:1 , type: 'spring'}
     const theme = useContext(themeContext);
     const darkMode = theme.state.darkMode
+    
+    const [CVlink, setCVlink] = useState('');
+    useEffect(() => {
+        const fetchCV = async () => {
+          try {
+            const response = await axios({
+              url: BaseURL + '/P_Info',
+              method: 'get',
+              params: {
+                "fields": "cv_file",
+                "media": "files",
+              },
+              headers: Headers,
+            });
+            setCVlink(response.data.results[0].files[0].url);
+          } catch (error) {
+            console.error('Error fetching :', error);
+          }
+        };
       
-    return (
+        fetchCV(); 
+      }, []);
+      
+
+        return (
 
 <div className="services" id='Services'>
 
@@ -26,10 +55,11 @@ const Services = () => {
         <br />
         Saepe fugit explicabo consequatur 
     </span>
-    <a href={Resume} download> 
-    <button className="button s-button">Download CV</button>
+    <a href={CVlink} target='_blank'> 
+    <button className="button s-button">View CV</button>
 
     </a>
+
     <div className="blur s-blur1" style={{background:'#ABF1FF94'}}></div>
 </div>
 
