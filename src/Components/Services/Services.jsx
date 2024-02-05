@@ -1,12 +1,11 @@
-
-
 import React, { useContext, useState, useEffect } from 'react';
 import './Services.css';
 import Card from '../Card/Card';
 import { themeContext } from '../../Context';
 import { motion } from 'framer-motion';
 import axios from 'axios';
-import HeartEmoji from '../../img/heartemoji.png'
+import HeartEmoji from '../../img/heartemoji.png';
+import LoadingSpinner from '../LoadingSpinner';
 
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
@@ -21,11 +20,12 @@ const Services = () => {
   const darkMode = theme.state.darkMode;
   const [CVlink, setCVlink] = useState('');
   const [services, setServices] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchCV = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios({
+        const cvResponse = await axios({
           url: BaseURL + '/P_Info',
           method: 'get',
           params: {
@@ -34,15 +34,9 @@ const Services = () => {
           },
           headers: Headers,
         });
-        setCVlink(response.data.results[0].files[0].url);
-      } catch (error) {
-        console.error('Error fetching CV:', error);
-      }
-    };
+        setCVlink(cvResponse.data.results[0].files[0].url);
 
-    const fetchServices = async () => {
-      try {
-        const response = await axios({
+        const servicesResponse = await axios({
           url: BaseURL + '/Services',
           method: 'get',
           params: {
@@ -51,15 +45,16 @@ const Services = () => {
           },
           headers: Headers,
         });
-        setServices(response.data.results);
-        console.log(response.data.results)
+        setServices(servicesResponse.data.results);
+
+        setIsLoading(false);
       } catch (error) {
-        console.error('Error fetching services:', error);
+        console.error('Error fetching data:', error);
+        setIsLoading(false);
       }
     };
 
-    fetchCV();
-    fetchServices();
+    fetchData();
   }, []);
 
   const organizeServicesByCategory = () => {
@@ -81,32 +76,59 @@ const Services = () => {
   const servicesByCategory = organizeServicesByCategory();
 
   return (
-<div className="services-list-container">
-  {Object.entries(servicesByCategory).map(([categoryName, categoryServices], index) => (
-    <div key={index} className="category-container">
-      {/* <div className="h2">{categoryName}</div> */}
-      <div className="service-list-LRbuttons">
-        <Card
-          emoji={HeartEmoji}
-          heading={categoryName}
-        //   detail={categoryServices.map((service) => service.s_type).join(', ')} 
-          detail={categoryServices.map((service, index) => (
-            <React.Fragment key={index}>
-              {service.s_type}
-              <br />
-            </React.Fragment>
+    <div className="services">
+      {/* leftside */}
+      <div className="awesome">
+        <span style={{ color: darkMode ? 'white' : '' }}>My Awesome</span>
+        <span>Services</span>
+        <span>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          <br />
+          Saepe fugit explicabo consequatur
+        </span>
+        <a href={CVlink} target='_blank'>
+          <button className="button s-button">View CV</button>
+        </a>
+
+        <div className="blur s-blur1" style={{ background: '#ABF1FF94' }}></div>
+      </div>
+    <div className='left-section-cards'>
+      {isLoading ? (
+        // Show loading spinner while data is being fetched
+        <LoadingSpinner/>
+        ) : (
+        // Show content once data is loaded
+        <div className="services-list-container">
+          {Object.entries(servicesByCategory).map(([categoryName, categoryServices], index) => (
+            <div key={index} className="category-container">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="service-list-LRbuttons"
+              >
+                <Card
+                  emoji={HeartEmoji}
+                  heading={categoryName}
+                  detail={categoryServices.map((service, index) => (
+                    <React.Fragment key={index}>
+                      {service.s_type}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                />
+              </motion.div>
+            </div>
           ))}
-          
-        />
+        </div>
+      )}
       </div>
     </div>
-  ))}
-</div>
-
   );
 };
 
 export default Services;
+
 
 
 

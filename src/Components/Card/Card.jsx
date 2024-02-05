@@ -6,7 +6,7 @@ const Card = ({emoji, heading,detail}) => {
     <img src={emoji} alt="emoji" />
     <span>{heading}</span>
     <span>{detail}</span>
-    <button className="c-button">Learn More</button>
+    {/* <button className="c-button">Learn More</button> */}
 </div>
     )
 }

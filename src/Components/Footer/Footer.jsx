@@ -18,14 +18,40 @@ const Footer = () => {
     <div className="footer" style = {{background:darkMode ? '#242D49' : '' }}>
         {/* <img src={Wave} alt="wave" style={{width:'100%'}} /> */}
         <div className="f-content">
-            <span>Hilal.bodon@hotmail.com</span>
-            <div className="f-icons">
-                {/* <Insta color='white' size='3rem'/>
+            <div className='experience-div'>
+                <div>
+                  خبيرة الجودة الشخصية 
+                </div>
+                <div>
+                  خبيرة مهارات الإلقاء والخطاب الجماهيري
+                </div>
+                <div>
+                  مستشارة التدريب والتطوير الشخصي والقيادي 
+                </div>
+                <div>
+                  مستشارة إعلامية 
+                </div>            
+                <div>
+                  مدربة وخبيرة إعداد حقائب وبرامج تدريب
+                </div>
+                <div>  معدة ومقدمة برامج إذاعية 
+                </div>
+                <div>  محاضِرة تحفيزية
+                </div>
+                <div>  ميسّرة لقاءات حوارية
+                </div>
+                <div>  كاتبة ومؤلفة (٦ كتب)
+                </div>
+            </div>
+
+            {/* <div className="f-icons">
+                <Insta color='white' size='3rem'/>
                 <Facebook color='white' size='3rem'/>
-                <Github color='white' size='3rem'/> */}
+                <Github color='white' size='3rem'/>
              <Link to="/about">About</Link>
 
-            </div>
+            </div> */}
+
             <img src={Logo} alt="hanadi logo" className='f-logo' />
             <span><b>Quad Digital Media</b> Copyright 2024 All rights reserved.</span>
         </div>

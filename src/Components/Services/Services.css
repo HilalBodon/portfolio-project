@@ -1,16 +1,15 @@
 .services{
     padding: 0 3rem 0 3rem;
     display: flex;
-    
-    height: 90vh;
     margin-top: 9rem;
-    margin-bottom: 13rem;
+    gap: 15%;
+
 }
 
 .awesome{
     display: flex;
     flex-direction: column;
-    position: relative;
+    /* position: relative; */
 }
 
 .awesome > :nth-child(1){
@@ -53,6 +52,24 @@
 .s-blur2{
     left: 14rem;
     top:8rem; 
+}
+
+.services-list-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.category-container{
+    width: calc(30%); 
+}
+
+.left-section-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 @media screen and (max-width:480px) {

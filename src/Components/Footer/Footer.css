@@ -28,7 +28,26 @@
 }
 
 .f-logo{
-height: 7rem;}
+height: 7rem;
+}
+
+.experience-div{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.experience-div>*{
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.6;
+  width: 50%;
+  justify-content: center;
+}
+
+
 
 @media screen and (max-width:480px) {
     .f-content>*{
