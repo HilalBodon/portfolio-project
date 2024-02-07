@@ -1,56 +1,89 @@
-import React, { useState, useRef } from 'react'
-import './Contact.css'
+import React, { useState, useRef } from 'react';
+import './Contact.css';
 import emailjs from '@emailjs/browser';
-import { themeContext } from '../../Context'
-import { useContext } from "react";
-    
+import { themeContext } from '../../Context';
+import { useContext } from 'react';
+
 const Contact = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
 
-    const theme = useContext(themeContext);
-    const darkMode = theme.state.darkMode;
+  const form = useRef();
+  const [done, setDone] = useState(false);
+  const [formData, setFormData] = useState({
+    user_name: '',
+    user_email: '',
+    message: '',
+  });
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    const form = useRef();
-    const[done,setdone] = useState(false);
-    const sendEmail = (e) => {
-      e.preventDefault();
-  
-      emailjs.sendForm('service_j9n6lus', 'template_inietos', form.current, '_oaMPVMzFGM5eEqZI')
-        .then((result) => {
-            console.log(result.text);
-            setdone(true);
-        }, (error) => {
-            console.log(error.text);
-        });
-    };
-    
+  const clearForm = () => {
+    setFormData({
+      user_name: '',
+      user_email: '',
+      message: '',
+    });
+  };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    try {
+      const result = await emailjs.sendForm('service_j9n6lus', 'template_inietos', form.current, '_oaMPVMzFGM5eEqZI');
+      console.log(result.text);
+      setDone(true);
+      clearForm();
+    } catch (error) {
+      console.error(error.text);
+    }
+  };
+
   return (
-<div className="contact-form">
-
-    <div className="w-left">
+    <div className="contact-form">
+      <div className="w-left">
         <div className="awesome">
-            <span style = {{color:darkMode ? 'white' : '' }}>Get in touch</span>
-            <span>Contact Me</span>
-            <div className="blur s-blur1"
-            style={{background:'#abf1ff94'}} ></div>
+          <span style={{ color: darkMode ? 'white' : '' }}>تواصل معنا </span>
+          <span>بالبريد الإلكتروني</span>
+          {/* <div className="blur s-blur1" style={{ background: '#abf1ff94' }}></div> */}
         </div>
-    </div>
+      </div>
 
-    <div className="c-right">
+      <div className="c-right">
         <form ref={form} onSubmit={sendEmail}>
-            <input type="text" name='user_name' className='user' placeholder='Name' />
-            <input type="text" name='user_email' className='user' placeholder='Email' />
-            <textarea name="message" className='user'  placeholder='Message'/>
-            <input type="submit" value='Send' className='button' />
-            <span>{done && 'thanks for for contacting me!!'}</span>
-            <div className='blur c-blur1' style={{background:'var(--purple)'}}></div>
-
-
+          <input
+            type="text"
+            name="user_name"
+            className="user"
+            placeholder="Name"
+            value={formData.user_name}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            name="user_email"
+            className="user"
+            placeholder="Email"
+            value={formData.user_email}
+            onChange={handleInputChange}
+          />
+          <textarea
+            name="message"
+            className="user"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleInputChange}
+          />
+          <input type="submit" value="Send" className="button" />
+          <span className={done ? 'show-message' : 'hide-message'}>Thanks for contacting me!!</span>
+          <div className="blur c-blur1" style={{ background: 'var(--purple)' }}></div>
         </form>
+      </div>
     </div>
+  );
+};
 
-</div>
-  )
-}
-
-export default Contact
+export default Contact;

@@ -1,10 +1,10 @@
 import React from 'react';
 import './Works.css'
-import Upwork from '../../img/Upwork.png';
-import Fiverr from '../../img/fiverr.png'
-import Amazon from '../../img/amazon.png'
-import Shopify from '../../img/Shopify.png'
-import Facebook from '../../img/Facebook.png'
+import Upwork from '../../img/IzaatAlQuoran.jpg';
+import Fiverr from '../../img/darAlSalam.jpg'
+import Amazon from '../../img/LND.jpg'
+import Shopify from '../../img/moultaqaAlKhayr.jpg'
+import Facebook from '../../img/khoubaraaAlTanmia.jpg'
 import { themeContext } from '../../Context'
 import { useContext } from "react";
 import {motion} from 'framer-motion';  
@@ -18,20 +18,21 @@ const Works = () => {
   return (
     <div className="works">
         {/* leftside */}
-        <div className="awesome">
-            <span style = {{color:darkMode ? 'white' : '' }}>Works For All These</span>
-            <span>Brands & Clients</span>
-            <span>Lorem ispum dolor sit, amet consectetur adipisicing elit.
+        <div className="awesome-works">
+            <span style = {{color:darkMode ? 'white' : '' }}>بعض العملاء</span>
+            <span>من جمعيات و مؤسسات</span>
+            <span style = {{color:darkMode ? 'white' : '' }} >أهمية دورها في ان تُلهم وتُطور وتساعد في تفعيل الطاقات الشبابية في مجتمعاتنا العربية  
+               <br />
+                وتساهم مع المؤثرين عليهم للوصول بهم إلى مرحلة الغنى الفكري والنفسي والمهاراتي والمالي
                 <br />
-                Saepe fugit explicabo consequatur 
+                 .بما يحقق الخير والفائدة والإنتاجية، والنهضة الإنسانية المتكاملة 
                 <br />
-                Lorem ispum dolor sit, amet consectetur adipisicing elit.
-                <br />
-                Saepe fugit explicabo consequatur 
+
             </span>
-            <button className="button s-button">Invite Me</button>
-            <div className="blur s-blur1" style={{background:'#ABF1FF94'}}></div>
+            <button className="button s-button">أرسل لي دعوة</button>
+            {/* <div className="blur s-blur1" style={{background:'#ABF1FF94'}}></div> */}
         </div>
+
         {/* rightside */}
         <div className="w-right">
             <motion.div
@@ -61,8 +62,8 @@ const Works = () => {
                 <img src={Facebook} alt="Facebookimg" />
                 </div>
 
-                <div className="w-backCircle blueCircle"></div>
-                <div className="w-backCircle yellowCircle"></div>
+                {/* <div className="w-backCircle blueCircle"></div>
+                <div className="w-backCircle yellowCircle"></div> */}
 
 
             </motion.div>

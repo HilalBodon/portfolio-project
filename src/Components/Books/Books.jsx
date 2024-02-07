@@ -50,22 +50,20 @@ const Books = () => {
                 },
                 headers: Headers,
               });
-            //   console.log(response.data.results);
+              // console.log(response.data.results);
               setBooksData(response.data.results);
               setLoading(false);
             } catch (error) {
                 if (axios.isAxiosError(error)) {
-                    // Axios error (network issues, timeouts, etc.)
-                    if (!error.response) {
+                   if (!error.response) {
                       setError('Network error: No response from server. Please check your internet connection.');
                     } else {
                       setError(`Request failed with status ${error.response.status}: ${error.response.statusText}`);
                     }
                   } else {
-                    // Other errors
                     setError('Error fetching data. Please try again later.');
                   }
-                  setLoading(false); // Set loading to false even in case of an error
+                  setLoading(false); 
                 }
               };
       fetchBooksData();
@@ -79,15 +77,15 @@ const Books = () => {
       navigation: isMobile ? false : true,
       height: isMobile ? '500px' : '400px',
     //   onSwiper: (swiper) => console.log(swiper),
-      onSlideChange: () => console.log('slide change'),
+      // onSlideChange: () => console.log('slide change'),
     };
   
     return (
       <div className="m-books">
         {/* heading */}
         <div className="books">
-          <span style={{ color: darkMode ? 'white' : '' }}>Hanadi Sheikh Najib</span>
-          <span>Books</span>
+          <span style={{ color: darkMode ? 'white' : '' }}>أهم المؤلفات </span>
+          <span>والكتب</span>
         </div>
   
         {loading ? (
@@ -95,16 +93,35 @@ const Books = () => {
             ) : error ? (
                 <div className="error-message">{error}</div>
               ) : (
-          <Swiper {...swiperConfig}>
-            {booksData.map((book, index) => (
-              <SwiperSlide key={index}>
-                <div className="books-card">
-                  <img src={book.images?.untitled[0]?.dir + book.images?.untitled[0]?.title || defaultImg} alt="Book" />
-                  <div>{book.name}</div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          // <Swiper {...swiperConfig}>
+          //   {booksData.map((book, index) => (
+          //     <SwiperSlide key={index}>
+          //       <div className="books-card">
+          //         <img src={book.images?.untitled[0]?.dir + book.images?.untitled[0]?.title || defaultImg} alt="Book" />
+          //         <div>{book.name}</div>
+          //       </div>
+          //     </SwiperSlide>
+          //   ))}
+          // </Swiper>
+
+              <Swiper {...swiperConfig}>
+      {booksData.map((book, index) => (
+        <SwiperSlide key={index}>
+          <div className="books-card">
+            {book.images?.untitled[0]?.dir && book.images?.untitled[0]?.title ? (
+              <img
+                src={book.images.untitled[0].dir + book.images.untitled[0].title}
+                alt="Book"
+              />
+            ) : (
+              <img src={defaultImg} alt="Default" />
+            )}
+            <div>{book.name}</div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
         )}
       </div>
     );

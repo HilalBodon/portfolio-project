@@ -1,23 +1,25 @@
 import React, { useEffect ,useContext, useState} from 'react'
 import axios from 'axios'
 import './Intro.css'
-import Facebook from '../../img/facebook.svg'
-import LinkedIn from '../../img/linkedin.svg'
-import Instagram from '../../img/instagram.svg'
-import hanadiImg from '../../img/hanadiSheikhNajib.png';
+import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
+
+// import Facebook from '../../img/facebook.svg'
+// import LinkedIn from '../../img/linkedin.svg'
+// import Instagram from '../../img/instagram.svg'
 // import Vector1 from '../../img/Vector1.png';
 // import Vector2 from '../../img/Vector2.png';
 // import thumbup from '../../img/thumbup.png';
 // import Crown from '../../img/crown.png';
-import micro from '../../img/microphone-headphones.png';
-import audience from '../../img/audience.png';
-import writer from '../../img/writer.png';
-// import FloatingDiv from '../FloatingDiv/FloatingDiv'
+// import micro from '../../img/microphone-headphones.png';
+// import audience from '../../img/audience.png';
+// import writer from '../../img/writer.png';
+import FloatingDiv from '../FloatingDiv/FloatingDiv'
 import { themeContext } from '../../Context'
 import {motion} from 'framer-motion';
 import Works from '../Works/Works'
 import Blog from '../Blog/Blog'
 import Books from '../Books/Books'
+import Contact from '../Contact/Contact'
 
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
@@ -66,31 +68,36 @@ const Intro =() =>{
 
   return (
 
-    <div className="intro">
+    <div className="intro" style = {{background:darkMode ? 'var(--black)' : '' }}>
     <div className="intro-intro">
-        <div className="i-left">
+        <div className="i-left" style = {{background:darkMode ? 'var(--black)' : '' }}>
             <div className="i-name">
-                <span style = {{color:darkMode ? 'white' : '' }}>Hi! I Am</span>
-                <span> Hanadi SHeikh Najib</span>
-                <span style = {{color:darkMode ? 'white' : '' }}> Frontend Developer with high 
-                    level of exoirience in web designing
-                     and development, producting the Quality work </span>      
+                <span style = {{color:darkMode ? 'white' : '' }}>مرحبا ً، أنا</span>
+                <span> هنادي الشيخ نجيب</span>
+                <span style = {{color:darkMode ? 'white' : '' }}> 
+                محاضِرة ومتحدثة تحفيزية ومدربة اجتماعية وكاتبة ومؤلفة 
+                             <br/> ومُعِدة ومُقَدِّمة برامج إعلامية
+                 </span>      
             </div>
-            <button className="button i-button"> Contact Me!</button>
+            <a href="https://wa.me/9613469332" target="_blank" rel="noopener noreferrer">
+            <button className="button i-button"> <FaWhatsapp/> تواصل معنا</button>
+                </a>
+
             <div className="i-icons">
-                <a href="https://github.com" target='_blank' rel="noreferrer noopener">
-                   <img src={Facebook} alt='Facebook logo' />
+                <a href="https://www.facebook.com/profile.php?id=100086631892117&mibextid=b06tZ0" target='_blank' rel="noreferrer noopener">
+                <FaFacebook />
                 </a>
-                <a href="https://www.linkedin.com" target='_blank' rel="noreferrer noopener">
-                    <img src={LinkedIn} alt='LinkedIn logo' />
+                <a href="https://www.youtube.com/@hanadicheikhnajib" target='_blank' rel="noreferrer noopener">
+                <FaYoutube />
                 </a>    
-                <a href="https://www.instagram.com" target='_blank' rel="noreferrer noopener">
-                <img src={Instagram} alt='Instagram logo'/>
+                <a href="https://instagram.com/hanadicheikhnajib?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target='_blank' rel="noreferrer noopener">
+                <FaInstagram />
                 </a>
+
             </div>
         </div>
 
-        <div className="i-right">
+        <div className="i-right" style = {{backgroundImage:darkMode ? 'none' : '' }}>
             {/* <img src={Vector1} alt="Vector1" />
             <img src={Vector2} alt="Vector2" /> */}
             <img src={mainImg} alt="hanadiImg" />
@@ -121,16 +128,16 @@ const Intro =() =>{
             </motion.img> */}
 
             {/* <motion.div 
-            initial={{left: '74%', top: '-4%'}}
-            whileInView={{left: '68%'}}
+            initial={{left: '7%', top: '40%'}}
+            whileInView={{left: '60%'}}
             transition={{transition}}
             className='fd-right-up floating-div'>
 
-                <FloatingDiv image={Crown} txt1="Goodwill" txt2="Ambassador"/>
+                <FloatingDiv image={Crown} txt1=" معاً لبناء جيل متوازن" txt2=" منتج، ومؤثر"/>
 
-            </motion.div>
+            </motion.div> */}
 
-            <motion.div
+            {/* <motion.div
             initial={{left: '9rem', top: '18rem'}}
             whileInView={{left: '0rem'}}
             transition={{transition}}
@@ -148,7 +155,8 @@ const Intro =() =>{
         </div>
         <Works/>
         <Books/>
-        <Blog/>
+        {/* <Blog/> */}
+        <Contact/>
 
     </div>
     )

@@ -1,7 +1,7 @@
 
 
   .footer {
-    margin-top: auto;
+    /* margin-top: auto; */
   }
   
 
@@ -9,7 +9,7 @@
 
 
   position: sticky;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   padding:  2rem 0rem;
     gap: 2rem;
    transition: background-color 0.5s ease 0s;

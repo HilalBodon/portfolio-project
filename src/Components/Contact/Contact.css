@@ -2,7 +2,8 @@
     padding: 0 3rem 0 3rem;
     display: flex;
     height: 80vh;
-    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .c-right{
@@ -24,7 +25,8 @@
     height: 2rem;
     padding: 0.3rem;
     outline: none;
-    border: 2px solid var(--orange);
+    border:none;
+    box-shadow: var(--smboxShadow);
     border-radius: 8px;
     font-size: 16px;
 }
@@ -39,6 +41,22 @@
     
 }
 
+
+.show-message {
+    opacity: 1;
+    font-size: larger;
+    background-color:rgb(15, 191, 15);
+    border-radius: 2rem;
+    padding: 1rem;
+    color: aliceblue;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .hide-message {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
 @media screen and (max-width:480px) {
     .contact-form{
         flex-direction: column;
