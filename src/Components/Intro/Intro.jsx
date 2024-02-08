@@ -17,10 +17,9 @@ import FloatingDiv from '../FloatingDiv/FloatingDiv'
 import { themeContext } from '../../Context'
 import {motion} from 'framer-motion';
 import Works from '../Works/Works'
-import Blog from '../Blog/Blog'
 import Books from '../Books/Books'
 import Contact from '../Contact/Contact'
-
+import Experience from '../Experience/Experience'
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
 const Headers = {
@@ -106,8 +105,6 @@ const scrollToContact = () => {
         </div>
 
         <div className="i-right" style = {{background:darkMode ? 'var(--black)' : '' }}>
-            {/* <img src={Vector1} alt="Vector1" />
-            <img src={Vector2} alt="Vector2" /> */}
             <img src={mainImg} alt="hanadiImg" />
 
 
@@ -118,8 +115,11 @@ const scrollToContact = () => {
         <div style = {{background:darkMode ? 'var(--black)' : 'white' }}>
         <Books/>
         </div>
-        {/* <Blog/> */}
+        
+        <div style = {{background:darkMode ? 'var(--black)' : 'white' }}>
         <Contact ref={contactRef} />
+        </div>
+        {/* <Experience/> */}
 
     </div>
     )

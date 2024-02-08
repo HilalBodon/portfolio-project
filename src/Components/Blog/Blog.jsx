@@ -90,9 +90,8 @@ const Blog = () => {
   return (
     <div className="t-wrapper" id='Blog'>
       <div className="t-heading" ref={featuredBlogRef}>
-        <span>My </span>
-        <span>Blogs </span>
-        <span></span>
+        <span> مقالاتي </span>
+        <span>الشخصية </span>
       </div>
 
       <div className="featuredBlog" >

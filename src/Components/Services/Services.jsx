@@ -23,6 +23,7 @@ const Services = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+
     const fetchData = async () => {
       try {
         const cvResponse = await axios({
@@ -35,7 +36,7 @@ const Services = () => {
           headers: Headers,
         });
         setCVlink(cvResponse.data.results[0].files[0].url);
-
+    
         const servicesResponse = await axios({
           url: BaseURL + '/Services',
           method: 'get',
@@ -45,14 +46,57 @@ const Services = () => {
           },
           headers: Headers,
         });
-        setServices(servicesResponse.data.results);
-
+    
+        // Map through services to extract category images
+        const servicesWithImages = servicesResponse.data.results.map((service) => {
+          // Extract the category image URL
+          const categoryImage = service.categories && service.categories.length > 0 ? service.categories[0].Image : '';
+          
+          // Add category image URL to the service object
+          return {
+            ...service,
+            categoryImage: categoryImage,
+          };
+        });
+        // Set the state with services containing category images
+        setServices(servicesWithImages);
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
         setIsLoading(false);
       }
     };
+    
+    // const fetchData = async () => {
+    //   try {
+    //     const cvResponse = await axios({
+    //       url: BaseURL + '/P_Info',
+    //       method: 'get',
+    //       params: {
+    //         fields: 'cv_file',
+    //         media: 'files',
+    //       },
+    //       headers: Headers,
+    //     });
+    //     setCVlink(cvResponse.data.results[0].files[0].url);
+
+    //     const servicesResponse = await axios({
+    //       url: BaseURL + '/Services',
+    //       method: 'get',
+    //       params: {
+    //         fields: '*,categories',
+    //         limit: '50',
+    //       },
+    //       headers: Headers,
+    //     });
+    //     setServices(servicesResponse.data.results);
+    //     console.log(servicesResponse.data.results)
+    //     setIsLoading(false);
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //     setIsLoading(false);
+    //   }
+    // };
 
     fetchData();
   }, []);
@@ -79,15 +123,15 @@ const Services = () => {
     <div className="services">
       {/* leftside */}
       <div className="awesome">
-        <span style={{ color: darkMode ? 'white' : '' }}>My Awesome</span>
-        <span>Services</span>
+        <span style={{ color: darkMode ? 'white' : '' }}>أهم الخدمات</span>
+        <span>التي أقدمها</span>
         <span>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          بإمكانكم الإطلاع على الخبراتي و الخدمات التي أقدمها 
           <br />
-          Saepe fugit explicabo consequatur
+          بالضغط على زر سيرتي الذاتية
         </span>
         <a href={CVlink} target='_blank'>
-          <button className="button s-button">View CV</button>
+          <button className="button s-button"> سيرتي الذاتية</button>
         </a>
 
         <div className="blur s-blur1" style={{ background: '#ABF1FF94' }}></div>
@@ -108,7 +152,7 @@ const Services = () => {
                 className="service-list-LRbuttons"
               >
                 <Card
-                  emoji={HeartEmoji}
+                  emoji={categoryServices[0].categoryImage}
                   heading={categoryName}
                   detail={categoryServices.map((service, index) => (
                     <React.Fragment key={index}>

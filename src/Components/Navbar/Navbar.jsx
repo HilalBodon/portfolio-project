@@ -27,19 +27,19 @@ function Navbar() {
           <div className="n-list">
             <ul className="UL">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">الرئيسية</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/services">خدمات</Link>
               </li>
               <li>
-                <Link to="/experience">Experience</Link>
+                <Link to="/experience">الخبرات</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/books">Books</Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="/blog">Blog</Link>
+                <Link to="/blog">مقالات</Link>
               </li>
             </ul>
           </div>

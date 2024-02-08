@@ -1,9 +1,32 @@
 
 
   .footer {
-    /* margin-top: auto; */
-  }
+
+}
+
   
+  .f-icons{
+    display: flex;
+    gap: 0rem;
+}
+
+.f-icons>*{
+}
+.f-icons a>*{
+
+    margin: 1rem;
+    font-size: 3rem;
+    opacity: 0.8;
+    color:  var(--orange);
+    border-radius: 50%;
+}
+
+
+.f-icons>*:hover{
+cursor: pointer;
+scale: 1.1;
+
+}
 
 .footer .f-content {
 
@@ -13,7 +36,7 @@
   padding:  2rem 0rem;
     gap: 2rem;
    transition: background-color 0.5s ease 0s;
-   z-index: 3;
+   z-index: 2;
    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 1.8rem;
    display: flex;
    flex-direction: column;
@@ -34,7 +57,10 @@ height: 7rem;
 .experience-div{
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .experience-div>*{
