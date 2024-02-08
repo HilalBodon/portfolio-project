@@ -6,6 +6,7 @@
     align-items: center;
 }
 
+
 .c-right{
     display: flex;
     justify-content: center;
@@ -19,6 +20,10 @@
     gap: 2rem;
     align-items: center;
 }
+
+input::placeholder, textarea::placeholder {
+    text-align: right;
+  }
 
 .c-right .user{
     width: 20rem;

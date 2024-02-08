@@ -1,4 +1,4 @@
-import React, { useEffect ,useContext, useState} from 'react'
+import React, { useEffect ,useContext, useState, useRef} from 'react'
 import axios from 'axios'
 import './Intro.css'
 import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
@@ -32,11 +32,19 @@ const Headers = {
 const Intro =() =>{
     // const transition = { ease: [0.42, 0, 0.58, 1], type: 'spring' };
 
+
     const transition = {duration:4 , type: 'spring'}
     const theme = useContext(themeContext);
     const darkMode = theme.state.darkMode;
-
     const [mainImg, setMainImg] = useState([null]);
+    const contactRef = useRef(null);
+
+const scrollToContact = () => {
+  if (contactRef.current) {
+    contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start', alignToTop: true });
+  }
+};
+
 
     useEffect(() => {
         const fetchMainImg = async () =>{
@@ -76,7 +84,7 @@ const Intro =() =>{
                 <span> هنادي الشيخ نجيب</span>
                 <span style = {{color:darkMode ? 'white' : '' }}> 
                 محاضِرة ومتحدثة تحفيزية ومدربة اجتماعية وكاتبة ومؤلفة 
-                             <br/> ومُعِدة ومُقَدِّمة برامج إعلامية
+                              ومُعِدة ومُقَدِّمة برامج إعلامية
                  </span>      
             </div>
             <a href="https://wa.me/9613469332" target="_blank" rel="noopener noreferrer">
@@ -101,6 +109,28 @@ const Intro =() =>{
             {/* <img src={Vector1} alt="Vector1" />
             <img src={Vector2} alt="Vector2" /> */}
             <img src={mainImg} alt="hanadiImg" />
+
+
+        </div>
+        </div>
+
+        <Works scrollToContact={scrollToContact}/>
+        <div style={{background:"white"}} >
+        <Books/>
+        </div>
+        {/* <Blog/> */}
+        <Contact ref={contactRef} />
+
+    </div>
+    )
+}
+
+export default Intro
+
+
+
+
+
 
             {/* <motion.img
             initial={{left:'36%'}}
@@ -150,16 +180,3 @@ const Intro =() =>{
             {/* <div className="blur" style={{background: "rgba(50, 50, 50, 0.258)", top:'7rem'} }></div>
             <div className="blur" style={{background: "rgba(252, 167, 31, 0.258)", top:'22rem', width:'21rem', height:'11rem', left:'-15rem'}}></div>
             <div className="blur" style={{background: "rgba(50, 50, 50, 0.258)", top:'0rem', left:'-5rem'} }></div> */}
-
-        </div>
-        </div>
-        <Works/>
-        <Books/>
-        {/* <Blog/> */}
-        <Contact/>
-
-    </div>
-    )
-}
-
-export default Intro

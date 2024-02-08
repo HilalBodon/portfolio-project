@@ -4,9 +4,9 @@ import emailjs from '@emailjs/browser';
 import { themeContext } from '../../Context';
 import { useContext } from 'react';
 
-const Contact = () => {
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
+    const Contact = React.forwardRef((props, ref) => {
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
 
   const form = useRef();
   const [done, setDone] = useState(false);
@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-form">
+    <div className="contact-form" ref={ref}>
       <div className="w-left">
         <div className="awesome">
           <span style={{ color: darkMode ? 'white' : '' }}>تواصل معنا </span>
@@ -58,7 +58,7 @@ const Contact = () => {
             type="text"
             name="user_name"
             className="user"
-            placeholder="Name"
+            placeholder="الإسم والشهرة"
             value={formData.user_name}
             onChange={handleInputChange}
           />
@@ -66,24 +66,25 @@ const Contact = () => {
             type="text"
             name="user_email"
             className="user"
-            placeholder="Email"
+            placeholder="البريد الإلكتروني"
             value={formData.user_email}
             onChange={handleInputChange}
           />
           <textarea
             name="message"
             className="user"
-            placeholder="Message"
+            placeholder="محتوى الرسالة"
             value={formData.message}
             onChange={handleInputChange}
           />
-          <input type="submit" value="Send" className="button" />
+          <input type="submit" value="إرسال" className="button" />
           <span className={done ? 'show-message' : 'hide-message'}>Thanks for contacting me!!</span>
           <div className="blur c-blur1" style={{ background: 'var(--purple)' }}></div>
         </form>
       </div>
     </div>
   );
-};
+});
+
 
 export default Contact;
