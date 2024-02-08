@@ -105,7 +105,7 @@ const scrollToContact = () => {
             </div>
         </div>
 
-        <div className="i-right" style = {{backgroundImage:darkMode ? 'none' : '' }}>
+        <div className="i-right" style = {{background:darkMode ? 'var(--black)' : '' }}>
             {/* <img src={Vector1} alt="Vector1" />
             <img src={Vector2} alt="Vector2" /> */}
             <img src={mainImg} alt="hanadiImg" />
@@ -115,7 +115,7 @@ const scrollToContact = () => {
         </div>
 
         <Works scrollToContact={scrollToContact}/>
-        <div style={{background:"white"}} >
+        <div style = {{background:darkMode ? 'var(--black)' : 'white' }}>
         <Books/>
         </div>
         {/* <Blog/> */}
