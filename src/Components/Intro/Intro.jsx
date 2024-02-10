@@ -3,23 +3,13 @@ import axios from 'axios'
 import './Intro.css'
 import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
 
-// import Facebook from '../../img/facebook.svg'
-// import LinkedIn from '../../img/linkedin.svg'
-// import Instagram from '../../img/instagram.svg'
-// import Vector1 from '../../img/Vector1.png';
-// import Vector2 from '../../img/Vector2.png';
-// import thumbup from '../../img/thumbup.png';
-// import Crown from '../../img/crown.png';
-// import micro from '../../img/microphone-headphones.png';
-// import audience from '../../img/audience.png';
-// import writer from '../../img/writer.png';
-import FloatingDiv from '../FloatingDiv/FloatingDiv'
+// import FloatingDiv from '../FloatingDiv/FloatingDiv'
 import { themeContext } from '../../Context'
-import {motion} from 'framer-motion';
+// import {motion} from 'framer-motion';
 import Works from '../Works/Works'
 import Books from '../Books/Books'
 import Contact from '../Contact/Contact'
-import Experience from '../Experience/Experience'
+// import Experience from '../Experience/Experience'
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
 const Headers = {

@@ -138,10 +138,8 @@ const Services = () => {
       </div>
     <div className='left-section-cards'>
       {isLoading ? (
-        // Show loading spinner while data is being fetched
         <LoadingSpinner/>
         ) : (
-        // Show content once data is loaded
         <div className="services-list-container">
           {Object.entries(servicesByCategory).map(([categoryName, categoryServices], index) => (
             <div key={index} className="category-container">

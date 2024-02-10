@@ -1,52 +1,163 @@
-import React from 'react'
-import Toggle from '../Toggle/Toggle'
-import './Navbar.css'
-// import { Link } from 'react-scroll';
-import { Link } from 'react-router-dom'; 
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import Dropdown from './Dropdown';
+import { FaAlignRight ,FaCaretDown } from "react-icons/fa";
 
-import Logo from '../../img/hanadiLogo.png'
-import nameLogo from '../../img/nameLogo.png'
 
-import { themeContext } from '../../Context'
-import { useContext } from "react";
-    
 function Navbar() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    const theme = useContext(themeContext);
-    const darkMode = theme.state.darkMode;
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+    setDropdownOpen(false);
+  };
 
-    return (
-      <div className="n-wrapper" style = {{background:darkMode ? '#242D49' : '' }}>
-        <div className="n-left">
-          <img src={Logo} alt="logo" className="n-logo" />
-          <img src={nameLogo} alt="namelogo" className="n-namelogo" />
-          <Toggle />
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  return (
+    <>
+      <nav className='navbar'>
+        <Link to='/' className='navbar-logo'>
+          EPIC
+        </Link>
+        <div className='menu-icon' onClick={toggleSidebar}><FaAlignRight/>
+          <i className={sidebarOpen ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
-  
-        <div className="n-right">
-          <div className="n-list">
-            <ul className="UL">
-              <li>
-                <Link to="/">الرئيسية</Link>
-              </li>
-              <li>
-                <Link to="/services">خدمات</Link>
-              </li>
-              <li>
-                <Link to="/experience">الخبرات</Link>
-              </li>
-              {/* <li>
-                <Link to="/books">Books</Link>
-              </li> */}
-              <li>
-                <Link to="/blog">مقالات</Link>
-              </li>
-            </ul>
-          </div>
-          {/* <button className="button n-button">Contact</button> */}
-        </div>
-      </div>
-    );
-  }
-  
-  export default Navbar;
+        <ul className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+            <Link to='/' className='nav-links'>
+              Home
+            </Link>
+          </li>
+          <li className='nav-item' onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+            <Link to='/services' className='nav-links'>
+              Services 
+            </Link>
+              <FaCaretDown />
+            {dropdownOpen && <Dropdown />}
+          </li>
+          <li className='nav-item'>
+            <Link to='/products' className='nav-links'>
+              Products
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link to='/contact-us' className='nav-links'>
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link to='/sign-up' className='nav-links-mobile'>
+              Sign Up
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </>
+  );
+}
+
+export default Navbar;
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Button } from './Button';
+// import { Link } from 'react-router-dom';
+// import './Navbar.css';
+// import Dropdown from './Dropdown';
+
+// function Navbar() {
+//   const [click, setClick] = useState(false);
+//   const [dropdown, setDropdown] = useState(false);
+
+//   const handleClick = () => setClick(!click);
+//   const closeMobileMenu = () => setClick(false);
+
+//   const onMouseEnter = () => {
+//     if (window.innerWidth < 960) {
+//       setDropdown(false);
+//     } else {
+//       setDropdown(true);
+//     }
+//   };
+
+//   const onMouseLeave = () => {
+//     if (window.innerWidth < 960) {
+//       setDropdown(false);
+//     } else {
+//       setDropdown(false);
+//     }
+//   };
+
+//   return (
+//     <>
+//       <nav className='navbar'>
+//         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+//           EPIC
+//           <i className='fab fa-firstdraft' />
+//         </Link>
+//         <div className='menu-icon' onClick={handleClick}>
+//           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+//         </div>
+//         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+//           <li className='nav-item'>
+//             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+//               Home
+//             </Link>
+//           </li>
+//           <li
+//             className='nav-item'
+//             onMouseEnter={onMouseEnter}
+//             onMouseLeave={onMouseLeave}
+//           >
+//             <Link
+//               to='/services'
+//               className='nav-links'
+//               onClick={closeMobileMenu}
+//             >
+//               Services <i className='fas fa-caret-down' />
+//             </Link>
+//             {dropdown && <Dropdown />}
+//           </li>
+//           <li className='nav-item'>
+//             <Link
+//               to='/products'
+//               className='nav-links'
+//               onClick={closeMobileMenu}
+//             >
+//               Products
+//             </Link>
+//           </li>
+//           <li className='nav-item'>
+//             <Link
+//               to='/contact-us'
+//               className='nav-links'
+//               onClick={closeMobileMenu}
+//             >
+//               Contact Us
+//             </Link>
+//           </li>
+//           <li>
+//             <Link
+//               to='/sign-up'
+//               className='nav-links-mobile'
+//               onClick={closeMobileMenu}
+//             >
+//               Sign Up
+//             </Link>
+//           </li>
+//         </ul>
+//         <Button />
+//       </nav>
+//     </>
+//   );
+// }
+
+// export default Navbar;

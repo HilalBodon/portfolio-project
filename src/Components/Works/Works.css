@@ -4,7 +4,6 @@
     justify-content: space-evenly;
     align-items: center;
     height: 90vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -17,7 +16,6 @@
     align-items: center;
     gap: 0.5rem;
     text-align: center;
-    /* position: relative; */
 }
 
 .awesome-works > :nth-child(1){

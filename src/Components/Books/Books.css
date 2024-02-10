@@ -5,7 +5,6 @@
     flex-direction: column;
     margin-top: 15vh;
     padding: 4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     animation-name: slideUp;
     animation-duration: 1s;
     animation-fill-mode: forwards;
