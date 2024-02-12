@@ -1,20 +1,25 @@
 .dropdown-menu {
-  /* background: brown; */
-  width: 200px;
+  background: var(--black);
+  width: max-content;
   position: absolute;
-  top: 78px;
+  top: 80px;
+  /* transform: translateX(-15px);  */
   list-style: none;
-  text-align: center;
-  z-index: 1;
+  transition: 30;
+  z-index: 3;
+  padding-inline-start: 0;
+  padding: 10px;
 }
 
-.dropdown-menu li {
-  background: var(--black);
+.dropdown-menu li>* {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
 }
 
+
 .dropdown-menu li:hover {
-  /* background: #5cabff; */
   border-left: 3px solid brown;
 }
 

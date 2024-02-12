@@ -47,18 +47,14 @@ const Services = () => {
           headers: Headers,
         });
     
-        // Map through services to extract category images
         const servicesWithImages = servicesResponse.data.results.map((service) => {
-          // Extract the category image URL
           const categoryImage = service.categories && service.categories.length > 0 ? service.categories[0].Image : '';
           
-          // Add category image URL to the service object
           return {
             ...service,
             categoryImage: categoryImage,
           };
         });
-        // Set the state with services containing category images
         setServices(servicesWithImages);
         setIsLoading(false);
       } catch (error) {

@@ -1,5 +1,5 @@
-import darkLogo from '../../img/darkHanadiLogo.png';
-import darkNameLogo from '../../img/darkNameLogo.png';
+// import darkLogo from '../../img/darkHanadiLogo.png';
+// import darkNameLogo from '../../img/darkNameLogo.png';
 
 
 

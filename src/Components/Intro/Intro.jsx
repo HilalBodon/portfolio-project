@@ -69,12 +69,13 @@ const scrollToContact = () => {
     <div className="intro-intro">
         <div className="i-left" style = {{background:darkMode ? 'var(--black)' : '' }}>
             <div className="i-name">
-                <span style = {{color:darkMode ? 'white' : '' }}>مرحبا ً، أنا</span>
+                {/* <span style = {{color:darkMode ? 'white' : '' }}>مرحبا ً، أنا</span> */}
                 <span> هنادي الشيخ نجيب</span>
-                <span style = {{color:darkMode ? 'white' : '' }}> 
-                محاضِرة ومتحدثة تحفيزية ومدربة اجتماعية وكاتبة ومؤلفة 
-                              ومُعِدة ومُقَدِّمة برامج إعلامية
-                 </span>      
+                <span style = {{color:darkMode ? 'white' : '' }}>  محاضِرة ومتحدثة تحفيزية ومدربة اجتماعية ومُقَدِّمة برامج إعلامية
+                 </span> 
+                 <div>
+                 على مدى أكثر من 25 عاماً عملت هنادي الشيخ نجيب كمحاضرة ومتحدثة تحفيزية ومدربة وكاتبة ومؤلفة، ومعدة ومقدمة برامج إعلامية، وتواصلت مع شريحة كبيرة من الشباب تزيد عن 100 ألف من لبنان وخارجه، حيث قدمت منتجاتها الفكرية والإعلامية والتدريبية  لقطاعات مختلفة في المجتمع، من الجامعات والمدارس والثانويات، مراكز التدريب، الأندية الشبابية والكشفية، الروابط والاتحادات التدريبية، المؤسسات الإعلامية، المؤتمرات والمعارض، مؤسسات المجتمع المدني، الجمعيات النسائية والفعاليات الخيرية والاجتماعية.
+                    </div>     
             </div>
             <a href="https://wa.me/9613469332" target="_blank" rel="noopener noreferrer">
             <button className="button i-button"> <FaWhatsapp/> تواصل معنا</button>

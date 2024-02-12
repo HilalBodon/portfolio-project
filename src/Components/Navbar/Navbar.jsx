@@ -1,67 +1,202 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 import { FaAlignRight ,FaCaretDown } from "react-icons/fa";
+import darkLogo from '../../img/darkHanadiLogo.png';
+import darkNameLogo from '../../img/darkNameLogo.png';
 
+import axios from 'axios';
+
+
+const BaseURL = process.env.REACT_APP_BASE_URL;
+const Headers = {
+  'X-BEA-Application-Id': process.env.REACT_APP_API_KEY,
+  'X-BEA-Authorization': process.env.REACT_APP_AUTHORIZATION_TOKEN,
+};
 
 function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [DropdownData,setDropDownsData]=useState([]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
     setDropdownOpen(false);
   };
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  // const toggleDropdown = () => {
+  //   setDropdownOpen(!dropdownOpen);
+  // };
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setHoveredCategory(hoveredCategory === index ? null : index);
   };
 
-  return (
-    <>
-      <nav className='navbar'>
-        <Link to='/' className='navbar-logo'>
-          EPIC
-        </Link>
-        <div className='menu-icon' onClick={toggleSidebar}><FaAlignRight/>
-          <i className={sidebarOpen ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-        <ul className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/' className='nav-links'>
-              Home
-            </Link>
-          </li>
-          <li className='nav-item' onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-            <Link to='/services' className='nav-links'>
-              Services 
-            </Link>
-              <FaCaretDown />
-            {dropdownOpen && <Dropdown />}
-          </li>
-          <li className='nav-item'>
-            <Link to='/products' className='nav-links'>
-              Products
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/contact-us' className='nav-links'>
-              Contact Us
-            </Link>
-          </li>
-          <li>
-            <Link to='/sign-up' className='nav-links-mobile'>
-              Sign Up
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </>
-  );
-}
 
+useEffect(() => {
+  const fetchDropDownsData = async () => {
+    try {
+      const response = await axios({
+        url: BaseURL + '/Nav_Content',
+        method: 'get',
+        params: {
+          fields: '*,categories',
+          limit: '30'
+        },
+        headers: Headers,
+      });
+      console.log(response.data.results);
+      setDropDownsData(response.data.results);
+    } catch (error) {
+      console.log(error);
+    };
+  };
+  fetchDropDownsData();
+}, []);
+
+// Assuming DropdownData is the state holding the fetched dropdown data
+const organizeNavByCategory = () => {
+  const NavByCategory = {};
+
+  DropdownData.forEach((service) => {
+    const categoryName = service.categories && service.categories.length > 0 ? service.categories[0].Name : 'Uncategorized';
+
+    if (NavByCategory.hasOwnProperty(categoryName)) {
+      NavByCategory[categoryName].push(service);
+    } else {
+      NavByCategory[categoryName] = [service];
+    }
+  });
+
+  return NavByCategory;
+};
+
+const NavByCategory = organizeNavByCategory();
+
+// Now, you can dynamically render the navbar items based on the categories
+return (
+  <>
+    <nav className='navbar'>
+         <Link to='/' className='navbar-logo'>
+           <img src={darkLogo} alt="hanadi logo" />
+           <img src={darkNameLogo} alt="nameLogo" />
+         </Link>
+      <div className='menu-icon' onClick={toggleSidebar}><FaAlignRight/>
+        <i className={sidebarOpen ? 'fas fa-times' : 'fas fa-bars'} />
+      </div>
+      <ul className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
+        {Object.keys(NavByCategory).map((category, index) => (
+          <li key={index} className='nav-item'   onMouseEnter={() => toggleDropdown(index)}
+          onMouseLeave={() => toggleDropdown(null)}>
+
+            {/* <Link to={`/${category}`} className='nav-links'>
+              {category}
+            </Link> */}
+            <div className='nav-links'>{category}</div>
+
+          {hoveredCategory === index && (
+            <Dropdown
+              dropdownData={NavByCategory[category]}
+              isOpen={hoveredCategory === index}
+            />
+          )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </>
+);
+}
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import './Navbar.css';
+// import Dropdown from './Dropdown';
+// import { FaAlignRight ,FaCaretDown } from "react-icons/fa";
+// import darkLogo from '../../img/darkHanadiLogo.png';
+// import darkNameLogo from '../../img/darkNameLogo.png';
+
+// function Navbar() {
+//   const [sidebarOpen, setSidebarOpen] = useState(false);
+//   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+//   const toggleSidebar = () => {
+//     setSidebarOpen(!sidebarOpen);
+//     setDropdownOpen(false);
+//   };
+
+//   const toggleDropdown = () => {
+//     setDropdownOpen(!dropdownOpen);
+//   };
+
+//   return (
+//     <>
+//       <nav className='navbar'>
+//         <Link to='/' className='navbar-logo'>
+//           <img src={darkLogo} alt="hanadi logo" />
+//           <img src={darkNameLogo} alt="nameLogo" />
+//         </Link>
+//         <div className='menu-icon' onClick={toggleSidebar}
+//         ><FaAlignRight/>
+//           <i className={sidebarOpen ? 'fas fa-times' : 'fas fa-bars'} />
+//         </div>
+//         <ul className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
+//           <li className='nav-item'>
+//             <Link to='/' className='nav-links'>
+//               Home
+//             </Link>
+//           </li>
+//           <li className='nav-item' onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+//             <Link to='/services' className='nav-links'>
+//               Services 
+//             </Link>
+//               <FaCaretDown />
+//             {dropdownOpen && <Dropdown />}
+//           </li>
+//           <li className='nav-item'>
+//             <Link to='/products' className='nav-links'>
+//               Products
+//             </Link>
+//           </li>
+//           <li className='nav-item'>
+//             <Link to='/contact-us' className='nav-links'>
+//               Contact Us
+//             </Link>
+//           </li>
+//           <li>
+//             <Link to='/sign-up' className='nav-links-mobile'>
+//               Sign Up
+//             </Link>
+//           </li>
+//         </ul>
+//       </nav>
+//     </>
+//   );
+// }
+
+// export default Navbar;
+
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 
 
   .footer {
-
+    background: var(--black);
 }
 
   
@@ -30,7 +30,7 @@ scale: 1.1;
 
 .footer .f-content {
 
-
+  background-color: var(--black);
   position: sticky;
   /* margin-top: 3rem; */
   padding:  2rem 0rem;
