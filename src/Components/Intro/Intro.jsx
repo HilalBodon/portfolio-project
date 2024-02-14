@@ -7,7 +7,7 @@ import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { themeContext } from '../../Context'
 // import {motion} from 'framer-motion';
 import Works from '../Works/Works'
-import Books from '../Books/Books'
+import Shop from '../Shop/Shop'
 import Contact from '../Contact/Contact'
 // import Experience from '../Experience/Experience'
 
@@ -104,7 +104,7 @@ const scrollToContact = () => {
 
         <Works scrollToContact={scrollToContact}/>
         <div style = {{background:darkMode ? 'var(--black)' : 'white' }}>
-        <Books/>
+        <Shop/>
         </div>
         
         <div style = {{background:darkMode ? 'var(--black)' : 'white' }}>

@@ -5,8 +5,8 @@ import Dropdown from './Dropdown';
 import { FaAlignRight ,FaCaretDown } from "react-icons/fa";
 import darkLogo from '../../img/darkHanadiLogo.png';
 import darkNameLogo from '../../img/darkNameLogo.png';
-
 import axios from 'axios';
+import CategoryDetails from '../Pages/CategoryDetails';
 
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
@@ -19,6 +19,7 @@ function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [DropdownData,setDropDownsData]=useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null); // State to hold selected category content
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -43,11 +44,11 @@ useEffect(() => {
         method: 'get',
         params: {
           fields: '*,categories',
-          limit: '30'
+          limit: '-1'
         },
         headers: Headers,
       });
-      console.log(response.data.results);
+      // console.log(response.data.results);
       setDropDownsData(response.data.results);
     } catch (error) {
       console.log(error);
@@ -56,7 +57,11 @@ useEffect(() => {
   fetchDropDownsData();
 }, []);
 
-// Assuming DropdownData is the state holding the fetched dropdown data
+  const handleCategorySelect = (categoryContent) => {
+    setSelectedCategory(categoryContent);
+  };
+
+
 const organizeNavByCategory = () => {
   const NavByCategory = {};
 
@@ -87,23 +92,21 @@ return (
         <i className={sidebarOpen ? 'fas fa-times' : 'fas fa-bars'} />
       </div>
       <ul className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
-        {Object.keys(NavByCategory).map((category, index) => (
-          <li key={index} className='nav-item'   onMouseEnter={() => toggleDropdown(index)}
-          onMouseLeave={() => toggleDropdown(null)}>
+{Object.keys(NavByCategory).map((category, index) => (
+  <li key={index} className='nav-item' onMouseEnter={() => toggleDropdown(index)} onMouseLeave={() => toggleDropdown(null)}>
+    <Link to={`/${category}`} className='nav-links'>
+      {category}
+    </Link>
+    {hoveredCategory === index && (
+      <Dropdown
+        dropdownData={NavByCategory[category]}
+        isOpen={hoveredCategory === index}
+        handleCategorySelect={handleCategorySelect}
+      />
+    )}
+  </li>
+))}
 
-            {/* <Link to={`/${category}`} className='nav-links'>
-              {category}
-            </Link> */}
-            <div className='nav-links'>{category}</div>
-
-          {hoveredCategory === index && (
-            <Dropdown
-              dropdownData={NavByCategory[category]}
-              isOpen={hoveredCategory === index}
-            />
-          )}
-          </li>
-        ))}
       </ul>
     </nav>
   </>
