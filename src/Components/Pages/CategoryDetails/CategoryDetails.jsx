@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CategoryDetails.css';
-import defaultImg from '../../img/hanadiLogo.png';
+import LoadingSpinner from '../../LoadingSpinner';
+import defaultImg from '../../../img/hanadiLogo.png';
 
 const CategoryDetails = ({ categoryName }) => {
     const [categoryData, setCategoryData] = useState([]);
@@ -32,7 +33,7 @@ const CategoryDetails = ({ categoryName }) => {
         });
   
         setCategoryData(filteredData);
-        console.log(filteredData);
+        // console.log(filteredData);
         setLoading(false);
       } catch (error) {
         setLoading(false);
@@ -54,8 +55,8 @@ const CategoryDetails = ({ categoryName }) => {
     <div className="category-details">
       <h1 className='cNameDiv'>جميع {categoryName}</h1>
       {loading ? (
-        <div>Loading...</div>
-      ) : error ? (
+        <LoadingSpinner/>
+        ) : error ? (
         <div>Error: {error}</div>
       ) : (
         <div className="category-data">

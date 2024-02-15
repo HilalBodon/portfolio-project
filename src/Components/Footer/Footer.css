@@ -2,6 +2,7 @@
 
   .footer {
     background: var(--black);
+    color: whitesmoke;
 }
 
   
@@ -17,7 +18,7 @@
     margin: 1rem;
     font-size: 3rem;
     opacity: 0.8;
-    color:  var(--orange);
+    color:  whitesmoke;
     border-radius: 50%;
 }
 
@@ -68,7 +69,7 @@ height: 7rem;
   line-height: 1.8;
   font-size: 1.0rem;
   font-weight: 600;
-  opacity: 0.6;
+  opacity: 0.9;
   width: 50%;
   justify-content: center;
 }

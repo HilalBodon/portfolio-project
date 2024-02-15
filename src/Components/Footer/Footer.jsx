@@ -5,16 +5,12 @@ import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 import Logo from '../../img/hanadiLogo.png'
 import { Link } from 'react-router-dom'; 
-import { themeContext } from '../../Context'
-import { useContext } from "react";
+
     
 const Footer = () => {
 
-    const theme = useContext(themeContext);
-    const darkMode = theme.state.darkMode;
-
   return (
-    <div className="footer" style = {{background:darkMode ? '#242D49' : '' }}>
+    <div className="footer" >
         {/* <img src={Wave} alt="wave" style={{width:'100%'}} /> */}
         <div className="f-content">
         <div className="f-icons">

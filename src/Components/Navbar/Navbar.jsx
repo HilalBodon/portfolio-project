@@ -6,7 +6,7 @@ import { FaAlignRight ,FaCaretDown } from "react-icons/fa";
 import darkLogo from '../../img/darkHanadiLogo.png';
 import darkNameLogo from '../../img/darkNameLogo.png';
 import axios from 'axios';
-import CategoryDetails from '../Pages/CategoryDetails';
+import CategoryDetails from '../Pages/CategoryDetails/CategoryDetails';
 
 
 const BaseURL = process.env.REACT_APP_BASE_URL;

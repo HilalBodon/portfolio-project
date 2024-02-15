@@ -4,7 +4,8 @@ import Intro from './Components/Intro/Intro';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import Shop from './Components/Shop/Shop';
-import CategoryDetails from './Components/Pages/CategoryDetails';
+import CategoryDetails from './Components/Pages/CategoryDetails/CategoryDetails';
+import AboutUs from './Components/Pages/AboutUs/AboutUs';
 
 function App() {
 
@@ -18,6 +19,9 @@ return (
           <Route path="/الكتب" element={<CategoryDetails categoryName="الكتب" />} />
           <Route path="/الدورات" element={<CategoryDetails categoryName="الدورات" />} />
           <Route path="/الكتب الصوتية" element={<CategoryDetails categoryName="الكتب الصوتية" />} />
+          <Route path="/مهمة هنادي" element={<AboutUs />} />
+          <Route path="/رسالتنا" element={<AboutUs />} />
+
         </Routes>
       </div>
       <Footer/>

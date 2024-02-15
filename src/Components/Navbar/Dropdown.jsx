@@ -49,6 +49,7 @@ const Dropdown = ({ dropdownData, isOpen, handleCategorySelect }) => {
 
   const handleClick = (categoryContent) => {
     handleCategorySelect(categoryContent);
+    console.log(categoryContent)
   };
 
   return isOpen ? (
