@@ -277,10 +277,10 @@ const Blog = () => {
   // };
 
   const handleBlogClick = (blog) => {
-    // Navigate to FullscreenBlog component with the selected blog data
-    navigate('/fullscreen-blog', { state: { selectedBlog: blog } });
-    console.log(blog);
+    // Navigate to FullscreenBlog component with the objectId of the selected blog
+    navigate(`/fullscreen-blog/${blog.objectId}`);
   };
+  
 
   return (
     <div className="t-wrapper" id='Blog'>

@@ -8,7 +8,7 @@ import Blog from './Components/Pages/Blog/Blog';
 import CategoryDetails from './Components/Pages/CategoryDetails/CategoryDetails';
 import AboutUs from './Components/Pages/AboutUs/AboutUs';
 import FullscreenBlog from './Components/Pages/Blog/FullscreenBlog';
-
+import Programs from './Components/Pages/Programs/Programs';
 function App() {
 
 return (
@@ -25,12 +25,13 @@ return (
           <Route path="/رسالتنا" element={<AboutUs />} />
           <Route path="/المدوَّنة" element={<Blog />} />
           <Route path="/مقلات" element={<Blog />} />
-          <Route path="/fullscreen-blog" element={<FullscreenBlog />} />
+          <Route path="/fullscreen-blog/:objectId" element={<FullscreenBlog />} />
 
+          <Route path="/البرامج" element={<Programs/>} />
+          <Route path="/المقاطع" element={<Programs category='المقاطع' />} />
+          <Route path="/البرامج المصورة" element={<Programs category='البرامج المصورة' />} />
 
           
-
-
 
         </Routes>
       </div>
@@ -39,53 +40,4 @@ return (
   );
 }
 export default App;
-
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Navbar from './Components/Navbar/Navbar';
-// import Intro from './Components/Intro/Intro';
-// import Services from './Components/Services/Services';
-// import Experience from './Components/Experience/Experience';
-// import Works from './Components/Works/Works';
-// import Shop from './Components/Shop/Shop';
-// import Blog from './Components/Blog/Blog';
-// import Contact from './Components/Contact/Contact';
-// import Footer from './Components/Footer/Footer';
-
-// import { themeContext } from './Context';
-// import { useContext } from 'react';
-
-
-
-
-// function App() {
-  //   // const theme = useContext(themeContext);
-  //   // const darkMode = theme.state.darkMode;
-  
-  //   return (
-    //     <Router>
-    //       <div
-    //         className="App"
-    //         // style={{
-      //         //   background: darkMode ? 'var(--black)' : '',
-      //         //   color: darkMode ? 'white' : '',
-//         // }}
-//       >
-
-//         <Navbar />
-//         <Routes>
-//           <Route path="/" element={<Intro />} />
-//           <Route path="/services" element={<Services />} />
-//           <Route path="/experience" element={<Experience />} />
-//           <Route path="/works" element={<Works />} />
-//           <Route path="/المتجر" element={<Shop />} />
-//           <Route path="/blog" element={<Blog />} />
-//           <Route path="/contact" element={<Contact />} />
-
-//         </Routes>
-//         <Footer />
-//       </div>
-//     </Router>
-//   );
-// }
 
