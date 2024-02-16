@@ -11,7 +11,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 20px;
+    row-gap: 2rem;
+    margin-top: 2rem;
 }
 
 .title{

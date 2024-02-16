@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Intro from './Components/Intro/Intro';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
-import Shop from './Components/Shop/Shop';
+import Shop from './Components/Pages/Shop/Shop';
+import Blog from './Components/Pages/Blog/Blog';
 import CategoryDetails from './Components/Pages/CategoryDetails/CategoryDetails';
 import AboutUs from './Components/Pages/AboutUs/AboutUs';
+import FullscreenBlog from './Components/Pages/Blog/FullscreenBlog';
 
 function App() {
 
@@ -21,6 +23,14 @@ return (
           <Route path="/الكتب الصوتية" element={<CategoryDetails categoryName="الكتب الصوتية" />} />
           <Route path="/مهمة هنادي" element={<AboutUs />} />
           <Route path="/رسالتنا" element={<AboutUs />} />
+          <Route path="/المدوَّنة" element={<Blog />} />
+          <Route path="/مقلات" element={<Blog />} />
+          <Route path="/fullscreen-blog" element={<FullscreenBlog />} />
+
+
+          
+
+
 
         </Routes>
       </div>

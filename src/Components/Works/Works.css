@@ -19,7 +19,7 @@
 }
 
 .awesome-works > :nth-child(1){
-    color: var(--black);
+    color: black;
     font-size: 2.5rem;
     font-weight: bold;
 }
@@ -33,7 +33,7 @@
 .awesome-works > :nth-child(3){
     color: var(--gray);
     font-size: 18px;
-    margin-top: 1rem;
+    margin: 2rem 0 ;
 }
 
 

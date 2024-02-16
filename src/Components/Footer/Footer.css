@@ -33,7 +33,7 @@ scale: 1.1;
 
   background-color: var(--black);
   position: sticky;
-  /* margin-top: 3rem; */
+  margin-top: 2rem;
   padding:  2rem 0rem;
     gap: 2rem;
    transition: background-color 0.5s ease 0s;

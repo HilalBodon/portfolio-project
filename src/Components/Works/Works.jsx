@@ -1,27 +1,24 @@
-import React, { useContext, useRef } from 'react';
+import React from 'react';
 import './Works.css';
 import Upwork from '../../img/IzaatAlQuoran.jpg';
 import Fiverr from '../../img/darAlSalam.jpg';
 import Amazon from '../../img/LND.jpg';
 import Shopify from '../../img/moultaqaAlKhayr.jpg';
 import Facebook from '../../img/khoubaraaAlTanmia.jpg';
-import { themeContext } from '../../Context';
 import { motion } from 'framer-motion';
 
 const Works = ({ scrollToContact }) => {
 
     const transition = { duration: 3.5, type: 'spring' };
-    const theme = useContext(themeContext);
-    const darkMode = theme.state.darkMode;
 
 
     return (
         <div className="works">
             {/* leftside */}
             <div className="awesome-works">
-                <span style={{ color: darkMode ? 'white' : '' }}>بعض العملاء</span>
-                <span>من جمعيات و مؤسسات</span>
-                <span style={{ color: darkMode ? 'white' : '' }}>
+                <span> ماذا يقال</span>
+                <span>  عن عمل هنادي</span>
+                <span >
                     أهمية دورها في ان تُلهم وتُطور وتساعد في تفعيل الطاقات الشبابية في مجتمعاتنا العربية
                     <br />
                     وتساهم مع المؤثرين عليهم للوصول بهم إلى مرحلة الغنى الفكري والنفسي والمهاراتي والمالي

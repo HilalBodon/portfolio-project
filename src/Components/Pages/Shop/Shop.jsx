@@ -7,8 +7,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import LoadingSpinner from '../LoadingSpinner';
-import defaultImg from '../../img/hanadiLogo.png';
+import LoadingSpinner from '../../LoadingSpinner';
+import defaultImg from '../../../img/hanadiLogo.png';
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
 const Headers = {

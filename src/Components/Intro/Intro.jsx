@@ -7,7 +7,7 @@ import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { themeContext } from '../../Context'
 // import {motion} from 'framer-motion';
 import Works from '../Works/Works'
-import Shop from '../Shop/Shop'
+import Shop from '../Pages/Shop/Shop'
 import Contact from '../Contact/Contact'
 // import Experience from '../Experience/Experience'
 

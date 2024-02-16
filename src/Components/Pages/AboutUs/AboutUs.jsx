@@ -36,7 +36,7 @@ const AboutUs = () => {
           headers: Headers,
         });
         setAboutUsData(response.data.results);
-        console.log(response.data.results);
+        // console.log(response.data.results);
         setLoading(false);
       } catch (error) {
         if (axios.isAxiosError(error)) {
