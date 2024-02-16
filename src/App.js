@@ -30,6 +30,9 @@ return (
           <Route path="/البرامج" element={<Programs/>} />
           <Route path="/المقاطع" element={<Programs category='المقاطع' />} />
           <Route path="/البرامج المصورة" element={<Programs category='البرامج المصورة' />} />
+          <Route path="/البرامج الإذاعية" element={<Programs category='البرامج الإذاعية' />} />
+          <Route path="/المقالات" element={<Programs category='المقالات' />} />
+
 
           
 

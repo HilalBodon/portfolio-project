@@ -37,6 +37,8 @@ const Programs = ({ category }) => {
           },
           headers: Headers,
         });
+        console.log(response.data.results);
+
         const filteredPrograms = category
           ? response.data.results.filter(program => program.categories[0]?.Name === category)
           : response.data.results;
@@ -98,9 +100,9 @@ const Programs = ({ category }) => {
                     alt="Item Image" 
                     onError={(e) => { e.target.onerror = null; e.target.src = defaultImg; }} 
                   />
-                  {hoveredProgram === program && <div className="price">{program.Brief}</div>}
+                  {hoveredProgram === program && <div className="price">{program.URL}</div>}
                 </div>
-                <div className="name">{program.name}</div>
+                <div className="name">{program.Title}</div>
               </div>
             </SwiperSlide>
           ))}
