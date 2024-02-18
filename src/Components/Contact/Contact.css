@@ -4,6 +4,7 @@
     height: 80vh;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 
@@ -53,7 +54,7 @@ input::placeholder, textarea::placeholder {
     background-color:rgb(15, 191, 15);
     border-radius: 2rem;
     padding: 1rem;
-    color: aliceblue;
+    /* color: aliceblue; */
     transition: opacity 0.5s ease-in-out;
   }
   

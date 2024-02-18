@@ -22,6 +22,16 @@
     }
   }
 
+  .overlay-image {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.9;
+  }
 
 .programs span:nth-of-type(1){
     color: black;
@@ -64,7 +74,7 @@
     width:20rem;
 }
 
-.programs-card img{
+.programs-card .thumbnail-image{
     width: 20vw;
     max-width: 350px;
     min-width: 200px;

@@ -1,0 +1,11 @@
+
+.calendly-main{
+    /* background: var(--black); */
+}
+
+.calendly-msg{
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+}

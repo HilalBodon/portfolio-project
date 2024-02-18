@@ -93,11 +93,13 @@ return (
       </div>
       <ul className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
 {Object.keys(NavByCategory).map((category, index) => (
+
   <li key={index} className='nav-item' onMouseEnter={() => toggleDropdown(index)} onMouseLeave={() => toggleDropdown(null)}>
     <Link to={`/${category}`} className='nav-links'>
       {category}
     </Link>
-    {hoveredCategory === index && (
+
+    {hoveredCategory === index &&  category !== 'المدوَّنة' &&  category !== 'رسالتنا' && category !=='التدريب' && category !=='التدريب الشخصي و الإستشارات' &&(
       <Dropdown
         dropdownData={NavByCategory[category]}
         isOpen={hoveredCategory === index}

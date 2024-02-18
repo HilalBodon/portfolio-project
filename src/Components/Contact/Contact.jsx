@@ -46,7 +46,7 @@ import { useContext } from 'react';
     <div className="contact-form" ref={ref}>
       <div className="w-left">
         <div className="awesome">
-          <span style={{ color: darkMode ? 'white' : '' }}>تواصل معنا </span>
+          <span >تواصل معنا </span>
           <span>بالبريد الإلكتروني</span>
           {/* <div className="blur s-blur1" style={{ background: '#abf1ff94' }}></div> */}
         </div>
@@ -79,7 +79,7 @@ import { useContext } from 'react';
           />
           <input type="submit" value="إرسال" className="button" />
           <span className={done ? 'show-message' : 'hide-message'}>Thanks for contacting me!!</span>
-          <div className="blur c-blur1" style={{ background: 'var(--purple)' }}></div>
+          {/* <div className="blur c-blur1" style={{ background: 'var(--purple)' }}></div> */}
         </form>
       </div>
     </div>

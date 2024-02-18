@@ -9,6 +9,7 @@ import CategoryDetails from './Components/Pages/CategoryDetails/CategoryDetails'
 import AboutUs from './Components/Pages/AboutUs/AboutUs';
 import FullscreenBlog from './Components/Pages/Blog/FullscreenBlog';
 import Programs from './Components/Pages/Programs/Programs';
+import CalendlyApointment from './Components/Pages/CalendlyApointment/CalendlyApointment';
 function App() {
 
 return (
@@ -26,15 +27,12 @@ return (
           <Route path="/المدوَّنة" element={<Blog />} />
           <Route path="/مقلات" element={<Blog />} />
           <Route path="/fullscreen-blog/:objectId" element={<FullscreenBlog />} />
-
           <Route path="/البرامج" element={<Programs/>} />
           <Route path="/المقاطع" element={<Programs category='المقاطع' />} />
           <Route path="/البرامج المصورة" element={<Programs category='البرامج المصورة' />} />
           <Route path="/البرامج الإذاعية" element={<Programs category='البرامج الإذاعية' />} />
           <Route path="/المقالات" element={<Programs category='المقالات' />} />
-
-
-          
+          <Route path="/التدريب الشخصي و الإستشارات" element={<CalendlyApointment/>} />
 
         </Routes>
       </div>

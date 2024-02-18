@@ -1,10 +1,10 @@
 import React from 'react';
 import './Works.css';
-import Upwork from '../../img/IzaatAlQuoran.jpg';
-import Fiverr from '../../img/darAlSalam.jpg';
-import Amazon from '../../img/LND.jpg';
-import Shopify from '../../img/moultaqaAlKhayr.jpg';
-import Facebook from '../../img/khoubaraaAlTanmia.jpg';
+import Upwork from '../../../img/IzaatAlQuoran.jpg';
+import Fiverr from '../../../img/darAlSalam.jpg';
+import Amazon from '../../../img/LND.jpg';
+import Shopify from '../../../img/moultaqaAlKhayr.jpg';
+import Facebook from '../../../img/khoubaraaAlTanmia.jpg';
 import { motion } from 'framer-motion';
 
 const Works = ({ scrollToContact }) => {

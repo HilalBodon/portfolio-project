@@ -3,8 +3,8 @@ import './Footer.css'
 import Wave from '../../img/wave.png'
 import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
 
-import Logo from '../../img/hanadiLogo.png'
-import { Link } from 'react-router-dom'; 
+import Logo from '../../img/darkHanadiLogo.png'
+// import { Link } from 'react-router-dom'; 
 
     
 const Footer = () => {
@@ -29,7 +29,7 @@ const Footer = () => {
 
             </div>
             <div className='experience-div'>
-              <div>
+              <div className='f-desc'>
                   <div>عضو نقابة محرري الصحافة اللبنانية</div>
                   <div>  خبيرة الجودة الشخصية </div>
                   <div> عضو الاتحاد الدولي للصحفيين</div>
@@ -41,7 +41,7 @@ const Footer = () => {
 
                 <div><img src={Logo} alt="hanadi logo" className='f-logo' /></div>
 
-                <div>
+                <div className='f-desc'>
                   <div>  مستشارة إعلامية </div>            
                   <div>  مدربة وخبيرة إعداد حقائب وبرامج تدريب</div>
                   <div>  معدة ومقدمة برامج إذاعية </div>
