@@ -107,7 +107,6 @@ const scrollToContact = () => {
         <div>
         <Contact ref={contactRef} />
         </div>
-        {/* <Experience/> */}
 
     </div>
     )

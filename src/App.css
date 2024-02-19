@@ -1,6 +1,6 @@
 /* to prevent overscrolling */
 html {
-  overflow: auto;
+  overflow: hidden;
   height: 100%;
 
 }
@@ -9,6 +9,12 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(255,255,255,1);
+}
+
+body > div {
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 
