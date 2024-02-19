@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Intro from './Components/Intro/Intro';
+import Intro from './Components/Pages/Intro/Intro';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import Shop from './Components/Pages/Shop/Shop';
@@ -10,6 +10,8 @@ import AboutUs from './Components/Pages/AboutUs/AboutUs';
 import FullscreenBlog from './Components/Pages/Blog/FullscreenBlog';
 import Programs from './Components/Pages/Programs/Programs';
 import CalendlyApointment from './Components/Pages/CalendlyApointment/CalendlyApointment';
+import InvitationForm from './Components/Pages/InvitationForm/InvitationForm';
+
 function App() {
 
 return (
@@ -33,6 +35,9 @@ return (
           <Route path="/البرامج الإذاعية" element={<Programs category='البرامج الإذاعية' />} />
           <Route path="/المقالات" element={<Programs category='المقالات' />} />
           <Route path="/التدريب الشخصي و الإستشارات" element={<CalendlyApointment/>} />
+
+          <Route path="/Presentation" element={<InvitationForm invitationType='Presentation'/>} />
+
 
         </Routes>
       </div>

@@ -64,10 +64,17 @@ const Programs = ({ category }) => {
 
 
 
+  // const getYouTubeThumbnail = (videoUrl) => {
+  //   const videoId = videoUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  //   return videoId ? `https://img.youtube.com/vi/${videoId[1]}/maxresdefault.jpg` : null;
+  // };
   const getYouTubeThumbnail = (videoUrl) => {
     const videoId = videoUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-    return videoId ? `https://img.youtube.com/vi/${videoId[1]}/maxresdefault.jpg` : null;
-  };
+    const videoIdShorts = videoUrl.match(/(?:https?:\/\/)?(?:www\.)?youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/);
+    const id = videoId ? videoId[1] : (videoIdShorts ? videoIdShorts[1] : null);
+    return id ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg` : null;
+};
+
   
 
   const renderSwipers = () => {
