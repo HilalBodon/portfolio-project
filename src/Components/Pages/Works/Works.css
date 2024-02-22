@@ -3,7 +3,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 90vh;
+
+    /* height: 90vh; */
 
 }
 
@@ -115,12 +116,13 @@
     top: 8rem;
 } */
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:800px) {
     .works{
         flex-direction: column;
         height: 55rem;
         padding: 0;
         gap: 5rem;
+
     }
     .w-right{
         display: flex;

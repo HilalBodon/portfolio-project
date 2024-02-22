@@ -23,7 +23,7 @@ const FullscreenBlog = () => {
           params: {
             fields: '*',
             media: 'images',
-            crops: 'ax1000', // Adjust as needed
+            crops: 'ax1000', 
           },
           headers: Headers,
         });

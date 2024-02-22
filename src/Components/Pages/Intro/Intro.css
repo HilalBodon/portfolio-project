@@ -135,13 +135,25 @@ scale: 1.1;
     background-color: white;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:800px) {
     .intro{
     flex-direction: column;
-    height: 64rem;
-    gap: 7rem;
+    /* height: 64rem; */
+    gap: 4rem;
     }
-    .i-right{
+
+    .intro-intro{
+        flex-direction: column-reverse;
+    }
+
+    .i-right > :nth-child(1) {
+        border-radius: 50%;
+        width: 95%; 
+        height: auto;
+        margin-top: 2rem;
+   }
+
+    /* .i-right{
         transform: scale(0.8);
         left: -3rem;
     }
@@ -150,5 +162,5 @@ scale: 1.1;
     }
     .floating-div:nth-of-type(1){
         top: -7rem !important;
-    }
+    } */
   }

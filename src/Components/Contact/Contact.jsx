@@ -34,7 +34,7 @@ import { useContext } from 'react';
 
     try {
       const result = await emailjs.sendForm('service_j9n6lus', 'template_inietos', form.current, '_oaMPVMzFGM5eEqZI');
-      console.log(result.text);
+      // console.log(result.text);
       setDone(true);
       clearForm();
     } catch (error) {

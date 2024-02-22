@@ -266,24 +266,16 @@ const Blog = () => {
     setImageLoaded(true);
   };
 
-  // const handleBlogClick = async (blog) => {
-  //   setSelectedBlog(blog);
-  //   setLoadingFeaturedImage(true);
 
-  //   featuredBlogRef.current.scrollIntoView({ behavior: 'smooth' });
-  //   await new Promise(resolve => setTimeout(resolve, 2000));
-
-  //   setLoadingFeaturedImage(false);
-  // };
 
   const handleBlogClick = (blog) => {
-    // Navigate to FullscreenBlog component with the objectId of the selected blog
     navigate(`/fullscreen-blog/${blog.objectId}`);
   };
   
 
   return (
     <div className="t-wrapper" id='Blog'>
+       {!imageLoaded && <LoadingSpinner />}
       <div className="t-heading" ref={featuredBlogRef}>
         <span>مقالاتي الشخصية</span>
       </div>
@@ -302,7 +294,6 @@ const Blog = () => {
                 onLoad={handleImageLoad}
                 style={{ display: imageLoaded ? 'block' : 'none' }}
               />
-              {!imageLoaded && <LoadingSpinner />}
             </div>
             <div className="card-content">
               <span>{blog.blog_content}</span>

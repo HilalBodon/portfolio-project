@@ -42,8 +42,7 @@
 
 
 .m-books{
-    /* background: var(--black); */
-    /* direction: rtl; */
+/* padding-bottom: 2rem; */
 }
 .m-books .swiper{
     overflow: visible!important;
@@ -73,7 +72,7 @@
     border-radius: 8px;
 }
 
-.books-card{
+.books-card , .name{
     color: black;
     display: flex;
     flex-direction: column;
@@ -82,6 +81,7 @@
     align-items: center;
     font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 1rem;
     position: relative;
 
 }
@@ -109,7 +109,89 @@
     align-items: center;
   }
   
+  .full-screen-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: row;
+    color: black;
+    padding: 3rem;
+    
 
+    
+  }
+
+  .full-screen-view  img{
+    max-height: 70vw;
+
+  }
+
+  .fs-Name{
+    width: 100%;
+    text-align: center ;
+  }
+
+
+.fs-right{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  
+}
+  .fs-Brief{
+    font-size: 20px;
+    opacity: 0.8;
+  }
+
+  .fs-Price{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--orange);
+  } 
+
+  .main-fs{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .All-suggested{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
+    color: black;
+    background-color: rgb(240, 240, 240);
+
+  }
+
+  .All-suggested-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1rem;
+
+  }
+
+  .suggested-items{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .suggested-items img{
+    width: 20vw;
+  }
 
 @media screen and (max-width:480px) {
     .m-books .swiper {
@@ -118,4 +200,14 @@
     .swiper-wrapper{
         /* flex-direction: column; */
     }
+
+    .full-screen-view {
+      flex-direction: column;
+    }
+
+    .suggested-items img{
+      width: 40vw;
+    }
+
+    
   }

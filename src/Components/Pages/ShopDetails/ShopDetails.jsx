@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './CategoryDetails.css';
+import './ShopDetails.css';
 import LoadingSpinner from '../../LoadingSpinner';
 import defaultImg from '../../../img/hanadiLogo.png';
+import { Link } from 'react-router-dom';
 
-const CategoryDetails = ({ categoryName }) => {
+const ShopDetails = ({ categoryName }) => {
     const [categoryData, setCategoryData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -62,16 +63,18 @@ const CategoryDetails = ({ categoryName }) => {
         <div className="category-data">
           {categoryData.map((item, index) => (
             <div key={index} className="category-item">
+              {/* <Link to={{pathname: `/fullscreen/${index.objectId}`,
+                state: { index }
+              }}> */}
+               <Link to={`/fullscreen/${item.objectId}`}> 
               <img 
                 src={item.images?.untitled[0]?.dir + item.images?.untitled[0]?.imageax300 || defaultImg} 
                 alt="Item Image" 
                 onError={(e) => { e.target.onerror = null; e.target.src = defaultImg; }} 
             />
-              {/* <p className='title'>{item.name}</p>
-              <p className='brief'>{item.Brief}</p>
-              <p className='cat-price'>{item.book_price}</p> */}
+</Link>
               <div className='title'>{item.name}</div>
-              <div className='brief'>{item.Brief}</div>
+              {/* <p className="brief">{item.Brief.length > 20 ? `${item.Brief.substring(0, 20)} ` : item.Brief }</p> */}
               <div className='cat-price'>{item.book_price}</div>
 
             </div>
@@ -82,4 +85,4 @@ const CategoryDetails = ({ categoryName }) => {
   );
 };
 
-export default CategoryDetails;
+export default ShopDetails;

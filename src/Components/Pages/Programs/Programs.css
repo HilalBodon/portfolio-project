@@ -48,6 +48,10 @@
     color: black;
     padding: 2rem;
     text-align: center;
+    /* background-color:rgb(238, 238, 238);  */
+       /* box-shadow : 0px 19px 60px rgb(0 0 0 / 8%); */
+
+
 }
 
 
@@ -59,7 +63,7 @@
     overflow: visible!important;
     padding:  3rem 2rem;
     /* margin: 2rem; */
-   box-shadow : 0px 19px 60px rgb(0 0 0 / 8%);
+   /* box-shadow : 0px 19px 60px rgb(0 0 0 / 8%); */
 }
 .swiper-wrapper{
     align-items: flex-end;

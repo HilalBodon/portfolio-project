@@ -5,12 +5,13 @@ import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import Shop from './Components/Pages/Shop/Shop';
 import Blog from './Components/Pages/Blog/Blog';
-import CategoryDetails from './Components/Pages/CategoryDetails/CategoryDetails';
+import CategoryDetails from './Components/Pages/ShopDetails/ShopDetails';
 import AboutUs from './Components/Pages/AboutUs/AboutUs';
 import FullscreenBlog from './Components/Pages/Blog/FullscreenBlog';
 import Programs from './Components/Pages/Programs/Programs';
 import CalendlyApointment from './Components/Pages/CalendlyApointment/CalendlyApointment';
 import InvitationForm from './Components/Pages/InvitationForm/InvitationForm';
+import FullScreenView from './Components/Pages/Shop/FullScreenShop';
 
 function App() {
 
@@ -37,6 +38,8 @@ return (
           <Route path="/التدريب الشخصي و الإستشارات" element={<CalendlyApointment/>} />
 
           <Route path="/Presentation" element={<InvitationForm invitationType='Presentation'/>} />
+          <Route path="/fullscreen/:bookId" element={<FullScreenView />} />
+
 
 
         </Routes>

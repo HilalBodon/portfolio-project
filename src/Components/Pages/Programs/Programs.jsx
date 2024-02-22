@@ -88,8 +88,8 @@ const Programs = ({ category }) => {
       modules: [Navigation, Pagination, Scrollbar, A11y],
       spaceBetween: 50,
       slidesPerView: isMobile ? 1 : 3,
-      direction: isMobile ? 'vertical' : 'horizontal',
-      navigation: isMobile ? false : true,
+      direction:  'horizontal',
+      navigation:  true,
       height: isMobile ? '500px' : '400px',
     };
   

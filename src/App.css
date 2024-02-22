@@ -1,4 +1,3 @@
-/* to prevent overscrolling */
 html {
   overflow: hidden;
   height: 100%;
@@ -7,13 +6,13 @@ html {
 
 body {
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
   background-color: rgba(255,255,255,1);
 }
 
 body > div {
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -87,7 +86,7 @@ body > div {
   font-size: 3rem;
 }
 
-.home {
+/* .home {
   background-image: url('./Components/images/img-1.jpg');
   background-position: center;
   background-size: cover;
@@ -150,6 +149,6 @@ body > div {
   font-size: 100px;
 }
 
-  
+   */
 
   

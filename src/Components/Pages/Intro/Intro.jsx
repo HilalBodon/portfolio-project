@@ -2,14 +2,11 @@ import React, { useEffect , useState, useRef} from 'react'
 import axios from 'axios'
 import './Intro.css'
 import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
-
-// import FloatingDiv from '../FloatingDiv/FloatingDiv'
-// import { themeContext } from '../../Context'
-// import {motion} from 'framer-motion';
 import Works from '../Works/Works'
 import Shop from '../Shop/Shop'
 import Contact from '../../Contact/Contact'
-// import Experience from '../Experience/Experience'
+import defaultImg from '../../../img/hanadiLogo.png'
+import LoadingSpinner from '../../LoadingSpinner';
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
 const Headers = {
@@ -19,12 +16,11 @@ const Headers = {
 
 
 const Intro =() =>{
-    // const transition = { ease: [0.42, 0, 0.58, 1], type: 'spring' };
 
-
-    // const transition = {duration:4 , type: 'spring'}
     const [mainImg, setMainImg] = useState([null]);
     const contactRef = useRef(null);
+    const [loading, setLoading] = useState(true);
+
 
 const scrollToContact = () => {
   if (contactRef.current) {
@@ -50,8 +46,9 @@ const scrollToContact = () => {
                 ? response.data.results[0].images.untitled[0].dir +
                   response.data.results[0].images.untitled[0].imageax1000
                 : null;
-            
             setMainImg(ImgUrl || "");
+            setLoading(false);
+
             
             } catch (error) {
             console.error('Error fetching :', error);
@@ -60,10 +57,50 @@ const scrollToContact = () => {
     fetchMainImg();
     }, []);
 
+    // useEffect(() => {
+      //   const fetchMainImg = async () => {
+      //       try {
+      //           const response = await axios({
+      //               url: BaseURL + '/P_Info',
+      //               params: {
+      //                   "media": "images",
+      //                   "crops": "ax300,ax1000",
+      //               },
+      //               headers: Headers,
+      //           });
+      
+      //           // Extract image data
+      //           const imgData = response.data.results[0]?.images?.untitled[0];
+      //           const smallImgUrl = imgData ? imgData.dir + imgData.imageax300 : null;
+      //           const largeImgUrl = imgData ? imgData.dir + imgData.imageax1000 : null;
+      
+      //           // Initially set the smaller image
+      //           if (smallImgUrl) setMainImg(smallImgUrl);
+      
+      //           const preloadImage = (src, onSuccess) => {
+      //               const img = new Image();
+      //               img.onload = () => onSuccess(src); 
+      //               img.onerror = () => console.error('Error loading image:', src);
+      //               img.src = src;
+      //           };
+      
+      //           if (largeImgUrl) preloadImage(largeImgUrl, setMainImg);
+                
+      //       } catch (error) {
+      //           console.error('Error fetching :', error);
+      //       }
+      //   };
+      //   fetchMainImg();
+      // }, []);
+
 
   return (
 
     <div className="intro">
+            {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <>
     <div className="intro-intro">
         <div className="i-left">
             <div className="i-name">
@@ -107,10 +144,11 @@ const scrollToContact = () => {
         <div>
         <Contact ref={contactRef} />
         </div>
-
+        </>
+      )}
     </div>
-    )
-}
+    );
+};
 
 export default Intro
 

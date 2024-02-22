@@ -124,7 +124,7 @@ import { FaAlignRight } from "react-icons/fa";
 import darkLogo from '../../img/darkHanadiLogo.png';
 import darkNameLogo from '../../img/darkNameLogo.png';
 import axios from 'axios';
-import CategoryDetails from '../Pages/CategoryDetails/CategoryDetails';
+import CategoryDetails from '../Pages/ShopDetails/ShopDetails';
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
 const Headers = {
@@ -166,8 +166,17 @@ function Navbar() {
 
   const handleCategorySelect = (categoryContent) => {
     setSelectedCategory(categoryContent);
-    setSidebarOpen(false); // Close the sidebar when a dropdown item is clicked
+    setSidebarOpen(false); 
   };
+
+  const handleCategoryClick = (category) => {
+    if (['المدوَّنة', 'رسالتنا', 'التدريب', 'التدريب الشخصي و الإستشارات'].includes(category)) {
+      setSidebarOpen(false);
+    }
+  };
+  
+  
+
 
   const handleOutsideClick = (e) => {
     if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
@@ -214,10 +223,10 @@ function Navbar() {
         <ul className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
           {Object.keys(NavByCategory).map((category, index) => (
             <li key={index} className='nav-item' onMouseEnter={() => toggleDropdown(index)} onMouseLeave={() => toggleDropdown(null)}>
-              <Link to={`/${category}`} className='nav-links'>
+              <Link to={`/${category}`} className='nav-links'   onClick={() => handleCategoryClick(category)} >
                 {category}
               </Link>
-              {hoveredCategory === index && category !== 'المدوَّنة' && category !== 'رسالتنا' && category !== 'التدريب' && category !== 'التدريب الشخصي و الإستشارات' && (
+              {hoveredCategory === index && category !== 'المدوَّنة' && category !== 'رسالتنا' && category !== 'التدريب' && category !== 'التدريب الشخصي و الإستشارات' &&  (
                 <Dropdown
                   dropdownData={NavByCategory[category]}
                   isOpen={hoveredCategory === index}

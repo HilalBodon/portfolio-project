@@ -10,7 +10,7 @@ const LoadingSpinner = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "50vh",
+        height: "80vh",
       }}
     >
       <RingLoader	 color="#C87167" loading={true} size={100} />
