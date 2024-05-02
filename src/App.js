@@ -37,7 +37,9 @@ return (
           <Route path="/المقالات" element={<Programs category='المقالات' />} />
           <Route path="/التدريب الشخصي و الإستشارات" element={<CalendlyApointment/>} />
 
-          <Route path="/Presentation" element={<InvitationForm invitationType='Presentation'/>} />
+          <Route path="/إستضافة هنادي" element={<InvitationForm />} />
+          {/* <Route path="/إستضافة هنادي" element={<InvitationForm invitationType='Presentation'/>} /> */}
+
           <Route path="/fullscreen/:bookId" element={<FullScreenView />} />
 
 

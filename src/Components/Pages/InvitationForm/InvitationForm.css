@@ -1,3 +1,113 @@
-.invitation{
+.invitation-container {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px;
     color: black;
-}
+    text-align: right;
+  }
+  
+  .form-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .invitation-form {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .invitation-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    
+  }
+  
+  .invitation-type {
+    margin-right: 20px; 
+  }
+
+  .invitation-type {
+    margin-bottom: 20px;
+  }
+  
+  .invitation-type label {
+    margin-right: 10px;
+  }
+  
+  .invitation-type input{
+    margin-right: 10px;
+}    
+
+
+  .invitation-fields {
+    display: grid;
+    gap: 10px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+  }
+
+  .intl-tel-input  {
+    width: 103%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+  }
+
+  .my-custom-input{
+    border: 0px !important;
+  }
+  
+  
+  .submit-button {
+    width: 90%;
+    padding: 10px;
+    margin: 15px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+
+  .warning {
+    color: red;
+  }
+  
+  

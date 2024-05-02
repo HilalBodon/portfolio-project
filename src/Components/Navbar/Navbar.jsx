@@ -170,7 +170,7 @@ function Navbar() {
   };
 
   const handleCategoryClick = (category) => {
-    if (['المدوَّنة', 'رسالتنا', 'التدريب', 'التدريب الشخصي و الإستشارات'].includes(category)) {
+    if (['المدوَّنة', 'رسالتنا', 'التدريب', 'التدريب الشخصي و الإستشارات','إستضافة هنادي'].includes(category)) {
       setSidebarOpen(false);
     }
   };
@@ -226,7 +226,7 @@ function Navbar() {
               <Link to={`/${category}`} className='nav-links'   onClick={() => handleCategoryClick(category)} >
                 {category}
               </Link>
-              {hoveredCategory === index && category !== 'المدوَّنة' && category !== 'رسالتنا' && category !== 'التدريب' && category !== 'التدريب الشخصي و الإستشارات' &&  (
+              {hoveredCategory === index && category !== 'المدوَّنة' && category !== 'رسالتنا' && category !== 'التدريب' && category !== 'التدريب الشخصي و الإستشارات' && category !== 'إستضافة هنادي' && (
                 <Dropdown
                   dropdownData={NavByCategory[category]}
                   isOpen={hoveredCategory === index}
