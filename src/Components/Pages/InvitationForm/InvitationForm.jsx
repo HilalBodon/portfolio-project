@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './InvitationForm.css';
 import axios from 'axios';
-import CitySearchAutosuggest from '../../Geosuggest/CitySearchAutosuggest';
-import IntlTelInput from 'react-intl-tel-input';
+// import CitySearchAutosuggest from '../../Geosuggest/CitySearchAutosuggest';
+// import IntlTelInput from 'react-intl-tel-input';
 import 'react-intl-tel-input/dist/main.css';
+import emailjs from 'emailjs-com';
+
 
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
@@ -25,10 +27,14 @@ const InvitationForm = () => {
     topic: '',
   });
   const [formValid, setFormValid] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [loading, setLoading] = useState(false);
+const [successMessage, setSuccessMessage] = useState('');
+  // const [phoneNumber, setPhoneNumber] = useState('');
 
 
   useEffect(() => {
+ 
+
     const fetchInvitationTypes = async () => {
       try {
         const response = await axios({
@@ -47,19 +53,89 @@ const InvitationForm = () => {
       }
     };
     fetchInvitationTypes();
-  }, []);
+  }, [invitationType]);
 
-  const handleSubmit = (e) => {
+
+
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await emailjs.sendForm(
+  //       'service_f5n8snu',
+  //       'template_zt2w7if',
+  //       e.target,
+  //       'ysKksgQ99lzV9dyDu'
+  //     );
+  
+  //     console.log('Email sent successfully!');
+  //     e.target.reset();
+  //   } catch (error) {
+  //     console.error('Error sending email:', error);
+  //   }
+  // };
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true); 
+  //   try {
+  //     await emailjs.sendForm(
+  //       'service_f5n8snu',
+  //       'template_zt2w7if',
+  //       e.target,
+  //       'ysKksgQ99lzV9dyDu'
+  //     );
+  
+  //     // console.log('Email sent successfully!');
+  //     setSuccessMessage('تم الإرسال بنجاح'); 
+  //     e.target.reset();
+  //     setTimeout(() => {
+  //       setSuccessMessage('');
+  //     }, 4000);
+  //   } catch (error) {
+  //     console.error('حدث خطأ في الإرسال', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform form submission logic here
-    console.log('Form submitted for invitation type:', invitationType);
+    setLoading(true); 
+    try {
+      await emailjs.sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      );
+  
+      setSuccessMessage('تم الإرسال بنجاح'); 
+      e.target.reset();
+      setTimeout(() => {
+        setSuccessMessage('');
+      }, 4000);
+    } catch (error) {
+      console.error('حدث خطأ في الإرسال', error);
+    } finally {
+      setLoading(false);
+    }
   };
-
+  
+  
   const handleTypeChange = (e) => {
-    setInvitationType(e.target.value);
+    const newValue = e.target.value;
+    setInvitationType(newValue);
+
   };
-
-
+  
+  // useEffect(() => {
+  //   console.log('Updated invitation type:', invitationType);
+  // }, [invitationType]);
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,7 +150,7 @@ const InvitationForm = () => {
         updatedWarnings[name] = '';
       }
     } else if (name === 'mobile') {
-      const mobileRegex = /^[0-9]{10}$/;
+      const mobileRegex = /^[0-9]{8}$/;
       if (!mobileRegex.test(value)) {
         updatedWarnings[name] = 'Invalid mobile number format';
       } else {
@@ -97,7 +173,6 @@ const InvitationForm = () => {
   
 
   useEffect(() => {
-    // Check if all warnings are empty to enable form submission
     const isValid = Object.values(warnings).every((warning) => warning === '');
     setFormValid(isValid);
   }, [warnings]);
@@ -105,9 +180,13 @@ const InvitationForm = () => {
 
   const currentDate = new Date().toISOString().split('T')[0]; 
 
-  const handlePhoneNumberChange = (value, country) => {
-    setPhoneNumber(value);
-  };
+  // const handlePhoneNumberChange = (value, country) => {
+  //   const completePhoneNumber = `+${value}${country.dialCode}`;
+  //   console.log('Phone number:', completePhoneNumber);
+  //   setPhoneNumber(completePhoneNumber);
+  // };
+  
+  
 
   return (
     <div className="invitation-container">
@@ -120,7 +199,7 @@ const InvitationForm = () => {
               <input
                 type="radio"
                 name="invitationType"
-                value={type.Dropdown_content} // Assuming Dropdown_content holds the type name
+                value={type.Dropdown_content} 
                 onChange={handleTypeChange}
               />
               {type.Dropdown_content}
@@ -130,35 +209,37 @@ const InvitationForm = () => {
         
         <div className="invitation-fields">
           
-        <label htmlFor="entity">: الجهة المستضيفة / المركز</label>
+        <label htmlFor="host">: الجهة المستضيفة / المركز</label>
         <input
           type="text"
-          id="entity"
-          name="entity"
+          id="host"
+          name="host"
           onChange={handleInputChange}
           required
         />
         {warnings.entity && <span className="warning">{warnings.entity}</span>}
 
         <label htmlFor="mobile">: رقم الهاتف المحمول</label>
-        <IntlTelInput
+
+        {/* <IntlTelInput
+        name="mobile"
         containerClassName="intl-tel-input"
         inputClassName="form-control my-custom-input"
         defaultValue={phoneNumber}
         defaultCountry="lb"
         preferredCountries={['ps', 'sa', 'ae']}
         onChange={handlePhoneNumberChange}
-      />
+      /> */}
 
-        {/* <input
+        <input
           type="tel"
           id="mobile"
           name="mobile"
           onChange={handleInputChange}
-          pattern="[0-9]{10}"
+          pattern="[0-9]{8}"
           required
         />
-        {warnings.mobile && <span className="warning">{warnings.mobile}</span>} */}
+        {warnings.mobile && <span className="warning">{warnings.mobile}</span>}
 
         <label htmlFor="email">: البريد الإلكتروني</label>
         <input
@@ -194,8 +275,15 @@ const InvitationForm = () => {
 
 
 
-        <label htmlFor="location">: البلد/المدينة</label>
-        <CitySearchAutosuggest handleInputChange={handleInputChange} />
+        <label htmlFor="country">: البلد/المدينة</label>
+        {/* <CitySearchAutosuggest handleInputChange={handleInputChange} /> */}
+        <input
+          type="text"
+          id="country"
+          name="country"
+          onChange={handleInputChange}
+          required
+        />
         {warnings.location && <span className="warning">{warnings.location}</span>}
 
 
@@ -231,9 +319,19 @@ const InvitationForm = () => {
       
       </div>
 
-        <button type="submit" className="submit-button" disabled={!formValid}>
+        {/* <button type="submit" className="submit-button" disabled={!formValid}>
           إرسال طلب الإستضافة
-        </button>
+        </button> */}
+
+        <button
+          type="submit"
+          className={`submit-button ${loading ? 'loading' : ''}`}
+          disabled={loading}
+        >
+        {loading ? '...إرسال' : 'إرسال طلب الإستضافة'}
+      </button>
+      {successMessage && <div className="success-message">{successMessage}</div>}
+
       </form>
     </div>
   );

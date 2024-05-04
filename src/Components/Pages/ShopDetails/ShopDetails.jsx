@@ -75,7 +75,7 @@ const ShopDetails = ({ categoryName }) => {
 </Link>
               <div className='title'>{item.name}</div>
               {/* <p className="brief">{item.Brief.length > 20 ? `${item.Brief.substring(0, 20)} ` : item.Brief }</p> */}
-              <div className='cat-price'>{item.book_price}</div>
+              {/* <div className='cat-price'>{item.book_price}</div> */}
 
             </div>
           ))}

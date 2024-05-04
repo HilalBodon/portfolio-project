@@ -149,7 +149,7 @@
   }
 
   .fs-Price{
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--orange);
   } 
@@ -192,6 +192,35 @@
   .suggested-items img{
     width: 20vw;
   }
+
+  .suggested-item-link {
+    text-decoration: none; 
+    color: inherit;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .fs-whatsappButton {
+    background-color: #25d366; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    animation: bounce 0.5s infinite alternate; 
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  
 
 @media screen and (max-width:480px) {
     .m-books .swiper {

@@ -104,7 +104,7 @@ const Shop = () => {
                       alt="Item Image" 
                       onError={(e) => { e.target.onerror = null; e.target.src = defaultImg; }} 
                     />
-                    {hoveredBook === book && <div className="price">{book.book_price}</div>}
+                    {hoveredBook === book && <div className="price">{book.Brief}</div>}
                   </div>
                 </div>
               </Link>

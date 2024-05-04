@@ -31,7 +31,7 @@
   .invitation-types {
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
+    justify-content: space-around;
     
   }
   
@@ -41,6 +41,8 @@
 
   .invitation-type {
     margin-bottom: 20px;
+    display:inline-flex;
+    flex-direction: row-reverse;
   }
   
   .invitation-type label {
@@ -68,7 +70,7 @@
   input[type="email"],
   input[type="number"],
   input[type="date"] {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -110,4 +112,13 @@
     color: red;
   }
   
+  
+  .submit-button.loading {
+    background-color: gray;
+    cursor: not-allowed; 
+  }
+
+  .success-message{
+    text-align: center;
+  }
   
