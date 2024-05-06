@@ -1,0 +1,90 @@
+.t-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.t-heading{
+    color: black;
+    text-align:  center;
+    padding-top: 2rem;
+    font-size: 2rem;
+}
+
+.training-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+    margin: 2rem 2rem;
+    cursor: pointer;
+  }
+  
+  .training-card {
+    width: calc(48% - 20px); 
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .training-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image-training img {
+    display: flex;
+    width: 45vw;
+    height: auto;
+    overflow: hidden;
+    margin-left: 20px;
+  }
+  
+  .card-content {
+    font-size: 1.4rem;
+    padding: 2rem;
+    opacity: 0.7;
+  }
+  
+  .fullscreen-training{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.8rem;
+    /* margin: 2rem 0; */
+    font-size: 22px;
+    background-color: rgba(241, 241, 241, 0.539);
+
+    
+  }
+
+  .fs-trainingText{
+    margin:  20px;
+    max-width: 1000px;
+    }
+
+  @media screen and (max-width:680px) {
+
+    .training-card {
+        width: calc(80%); 
+    }
+    
+  }
+
+  @media screen and (max-width:900px) {
+
+    .training-card {
+        width: calc(80%); 
+    }
+    
+  }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import defaultImg from '../../../img/hanadiLogo.png';
-import './Blog.css';
+import './Training.css';
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
 const Headers = {
@@ -10,15 +10,15 @@ const Headers = {
   'X-BEA-Authorization': process.env.REACT_APP_AUTHORIZATION_TOKEN,
 };
 
-const FullscreenBlog = () => {
+const FullscreenTraining = () => {
   const { objectId } = useParams();
-  const [selectedBlog, setSelectedBlog] = useState(null);
+  const [selectedTraining, setSelectedTraining] = useState(null);
 
   useEffect(() => {
-    const fetchBlogData = async () => {
+    const fetchTrainingData = async () => {
       try {
         const response = await axios({
-          url: `${BaseURL}/blog/${objectId}`,
+          url: `${BaseURL}/Training/${objectId}`,
           method: 'get',
           params: {
             fields: '*',
@@ -27,28 +27,28 @@ const FullscreenBlog = () => {
           },
           headers: Headers,
         });
-        setSelectedBlog(response.data.results[0]);
+        setSelectedTraining(response.data.results[0]);
         // console.log(response.data.results);
       } catch (error) {
-        console.error('Error fetching blog data:', error);
+        console.error('Error fetching training data:', error);
       }
     };
 
-    fetchBlogData();
+    fetchTrainingData();
   }, [objectId]);
 
   return (
-    <div className="fullscreen-blog">
-      {selectedBlog && (
+    <div className="fullscreen-training">
+      {selectedTraining && (
         <>
-          <div className="card-image">
+          <div className="card-image-training">
             <img
-              src={selectedBlog.images?.untitled[0]?.dir + selectedBlog.images?.untitled[0]?.imageax1000 || defaultImg}
-              alt="blog"
+              src={selectedTraining.images?.untitled[0]?.dir + selectedTraining.images?.untitled[0]?.imageax1000 || defaultImg}
+              alt="training"
             />
           </div>
-          <h2>{selectedBlog.blog_content}</h2>
-          <div dangerouslySetInnerHTML={{ __html: selectedBlog.content }} className="fs-blogText" />
+          {/* <h2>{selectedTraining.Title}</h2> */}
+          <div dangerouslySetInnerHTML={{ __html: selectedTraining.Content }} className="fs-trainingText" />
 
         </>
       )}
@@ -56,4 +56,4 @@ const FullscreenBlog = () => {
   );
 };
 
-export default FullscreenBlog;
+export default FullscreenTraining;

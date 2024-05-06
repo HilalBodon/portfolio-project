@@ -163,9 +163,12 @@ border-radius: 100%;
   }
   
   .card-image img {
-    width: 95%;
+    display: flex;
+    width: 100%;
     height: auto;
     overflow: hidden;
+    margin-top: 2rem;
+
   }
   
   .card-content {
@@ -181,9 +184,17 @@ border-radius: 100%;
     align-items: center;
     flex-direction: column;
     gap: 1.8rem;
-    margin: 2rem 0;
+    /* margin: 2rem 0; */
+    font-size: 22px;
+    background-color: rgba(241, 241, 241, 0.539);
+
     
   }
+
+  .fs-blogText{
+    margin:  0 10vw;
+    max-width: 1000px;
+    }
 
   @media screen and (max-width:680px) {
 

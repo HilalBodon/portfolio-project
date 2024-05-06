@@ -258,7 +258,7 @@ const FullScreenView = () => {
         <hr />
       </div>
       <div className='All-suggested'>
-        <h2>Suggested Items</h2>
+        <h2>الكتب المقترحة</h2>
         <div className='All-suggested-wrap' >
           {suggestedItems.map(item => (
             <Link to={`/fullscreen/${item.objectId}`} key={item.objectId} className="suggested-item-link" onClick={handleLinkClick}>

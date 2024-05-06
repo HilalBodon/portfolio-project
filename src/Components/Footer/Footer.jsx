@@ -23,7 +23,7 @@ const Footer = () => {
                 <a href="https://instagram.com/hanadicheikhnajib?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target='_blank' rel="noreferrer noopener">
                 <FaInstagram />
                 </a>
-                <a href="https://wa.me/9613469332" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/96171553688" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp/>
                 </a>
 

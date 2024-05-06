@@ -6,8 +6,10 @@ import Amazon from '../../../img/LND.jpg';
 import Shopify from '../../../img/moultaqaAlKhayr.jpg';
 import Facebook from '../../../img/khoubaraaAlTanmia.jpg';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const Works = ({ scrollToContact }) => {
+
+const Works = () => {
 
     const transition = { duration: 3.5, type: 'spring' };
 
@@ -26,9 +28,12 @@ const Works = ({ scrollToContact }) => {
                     .بما يحقق الخير والفائدة والإنتاجية، والنهضة الإنسانية المتكاملة
                     <br />
                 </span>
-                <button className="button s-button" onClick={scrollToContact}>
+                {/* <button className="button s-button" >
                     أرسل لي دعوة
-                </button>
+                </button> */}
+            <Link to="/إستضافة هنادي" className="button s-button">
+            أرسل لي دعوة
+            </Link>
             </div>
 
             {/* rightside */}

@@ -120,7 +120,7 @@ const Shop = () => {
     <div className="m-books">
         {isStorePage && (
       <div className="books">
-        <span> &nbsp;أهم الدورات </span>
+        <span> &nbsp; الدورات </span>
         <span> والكتب </span>
       </div>)}
 

@@ -54,7 +54,7 @@ const ShopDetails = ({ categoryName }) => {
   
   return (
     <div className="category-details">
-      <h1 className='cNameDiv'>جميع {categoryName}</h1>
+      <h1 className='cNameDiv'> {categoryName}</h1>
       {loading ? (
         <LoadingSpinner/>
         ) : error ? (

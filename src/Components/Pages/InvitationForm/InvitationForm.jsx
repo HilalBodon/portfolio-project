@@ -31,7 +31,7 @@ const InvitationForm = () => {
 const [successMessage, setSuccessMessage] = useState('');
   // const [phoneNumber, setPhoneNumber] = useState('');
 
-
+ 
   useEffect(() => {
  
 
@@ -53,6 +53,7 @@ const [successMessage, setSuccessMessage] = useState('');
       }
     };
     fetchInvitationTypes();
+    
   }, [invitationType]);
 
 
@@ -77,42 +78,18 @@ const [successMessage, setSuccessMessage] = useState('');
   // };
 
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true); 
-  //   try {
-  //     await emailjs.sendForm(
-  //       'service_f5n8snu',
-  //       'template_zt2w7if',
-  //       e.target,
-  //       'ysKksgQ99lzV9dyDu'
-  //     );
-  
-  //     // console.log('Email sent successfully!');
-  //     setSuccessMessage('تم الإرسال بنجاح'); 
-  //     e.target.reset();
-  //     setTimeout(() => {
-  //       setSuccessMessage('');
-  //     }, 4000);
-  //   } catch (error) {
-  //     console.error('حدث خطأ في الإرسال', error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); 
     try {
       await emailjs.sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        'service_f5n8snu',
+        'template_zt2w7if',
         e.target,
-        process.env.REACT_APP_EMAILJS_USER_ID
+        'ysKksgQ99lzV9dyDu'
       );
   
+      // console.log('Email sent successfully!');
       setSuccessMessage('تم الإرسال بنجاح'); 
       e.target.reset();
       setTimeout(() => {
@@ -124,6 +101,30 @@ const [successMessage, setSuccessMessage] = useState('');
       setLoading(false);
     }
   };
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true); 
+  //   try {
+  //     await emailjs.sendForm(
+  //       process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  //       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  //       e.target,
+  //       process.env.REACT_APP_EMAILJS_USER_ID
+  //     );
+  
+  //     setSuccessMessage('تم الإرسال بنجاح'); 
+  //     e.target.reset();
+  //     setTimeout(() => {
+  //       setSuccessMessage('');
+  //     }, 4000);
+  //   } catch (error) {
+  //     console.error('حدث خطأ في الإرسال', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   
   
   const handleTypeChange = (e) => {

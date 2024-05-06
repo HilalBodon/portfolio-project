@@ -11,7 +11,9 @@ import FullscreenBlog from './Components/Pages/Blog/FullscreenBlog';
 import Programs from './Components/Pages/Programs/Programs';
 import CalendlyApointment from './Components/Pages/CalendlyApointment/CalendlyApointment';
 import InvitationForm from './Components/Pages/InvitationForm/InvitationForm';
-import FullScreenView from './Components/Pages/Shop/FullScreenShop';
+import FullScreenShop from './Components/Pages/Shop/FullScreenShop';
+import Training from './Components/Pages/Training/Training';
+import FullScreenTraining from './Components/Pages/Training/FullscreenTraining';
 
 function App() {
 
@@ -28,19 +30,23 @@ return (
           <Route path="/مهمة هنادي" element={<AboutUs />} />
           <Route path="/رسالتنا" element={<AboutUs />} />
           <Route path="/المدوَّنة" element={<Blog />} />
+          <Route path="/التدريب" element={<Training />} />
           <Route path="/مقلات" element={<Blog />} />
           <Route path="/fullscreen-blog/:objectId" element={<FullscreenBlog />} />
           <Route path="/البرامج" element={<Programs/>} />
           <Route path="/المقاطع" element={<Programs category='المقاطع' />} />
           <Route path="/البرامج المصورة" element={<Programs category='البرامج المصورة' />} />
           <Route path="/البرامج الإذاعية" element={<Programs category='البرامج الإذاعية' />} />
-          <Route path="/المقالات" element={<Programs category='المقالات' />} />
+          <Route path="/المقابلات" element={<Programs category='المقابلات' />} />
           <Route path="/التدريب الشخصي و الإستشارات" element={<CalendlyApointment/>} />
 
           <Route path="/إستضافة هنادي" element={<InvitationForm />} />
+
           {/* <Route path="/إستضافة هنادي" element={<InvitationForm invitationType='Presentation'/>} /> */}
 
-          <Route path="/fullscreen/:bookId" element={<FullScreenView />} />
+          <Route path="/fullscreen/:bookId" element={<FullScreenShop />} />
+          <Route path="/fullscreen-training/:objectId"  element={<FullScreenTraining />} />
+
 
 
 

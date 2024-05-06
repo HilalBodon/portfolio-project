@@ -104,6 +104,10 @@
     z-index: -1;
 }
 
+.s-button{
+text-decoration: none;
+}
+
 /* .blueCircle{
     background: #194988;
     left: 18rem;

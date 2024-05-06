@@ -69,7 +69,7 @@ const Programs = ({ category }) => {
     const videoId = videoUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
     const videoIdShorts = videoUrl.match(/(?:https?:\/\/)?(?:www\.)?youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/);
     const id = videoId ? videoId[1] : (videoIdShorts ? videoIdShorts[1] : null);
-    return id ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg` : null;
+    return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
 };
 
   

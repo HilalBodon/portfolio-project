@@ -22,11 +22,11 @@ const Intro =() =>{
     const [loading, setLoading] = useState(true);
 
 
-const scrollToContact = () => {
-  if (contactRef.current) {
-    contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start', alignToTop: true });
-  }
-};
+// const scrollToContact = () => {
+//   if (contactRef.current) {
+//     contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start', alignToTop: true });
+//   }
+// };
 
 
     useEffect(() => {
@@ -111,7 +111,7 @@ const scrollToContact = () => {
                  على مدى أكثر من 25 عاماً عملت هنادي الشيخ نجيب كمحاضرة ومتحدثة تحفيزية ومدربة وكاتبة ومؤلفة، ومعدة ومقدمة برامج إعلامية، وتواصلت مع شريحة كبيرة من الشباب تزيد عن 100 ألف من لبنان وخارجه، حيث قدمت منتجاتها الفكرية والإعلامية والتدريبية  لقطاعات مختلفة في المجتمع، من الجامعات والمدارس والثانويات، مراكز التدريب، الأندية الشبابية والكشفية، الروابط والاتحادات التدريبية، المؤسسات الإعلامية، المؤتمرات والمعارض، مؤسسات المجتمع المدني، الجمعيات النسائية والفعاليات الخيرية والاجتماعية.
                     </div>     
             </div>
-            <a href="https://wa.me/9613469332" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/96171553688" target="_blank" rel="noopener noreferrer">
             <button className="button i-button"> <FaWhatsapp/> تواصل معنا</button>
                 </a>
 
@@ -136,14 +136,15 @@ const scrollToContact = () => {
         </div>
         </div>
 
-        <Works scrollToContact={scrollToContact}/>
+        <Works/>
+
         <div >
         <Shop/>
         </div>
         
-        <div>
+        {/* <div>
         <Contact ref={contactRef} />
-        </div>
+        </div> */}
         </>
       )}
     </div>
