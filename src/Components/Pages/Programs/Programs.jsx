@@ -95,7 +95,7 @@ const Programs = ({ category }) => {
   
     return Object.entries(categories).map(([category, programs]) => (
       <div className='swiper-container' key={category}>
-        <h2 className='categoryName'>{category}</h2>
+        <h2 className='categoryName-programs'>{category}</h2>
         <Swiper {...swiperConfig}>
           {programs.map(program => {
             const videoUrl = program.URL;
@@ -131,7 +131,7 @@ const Programs = ({ category }) => {
 <div className="m-programs">
   {category == null && (
     <div className="programs">
-      <span> &nbsp; جميع</span>
+      {/* <span> &nbsp; جميع</span> */}
       <span> البرامج</span>
     </div>
   )}

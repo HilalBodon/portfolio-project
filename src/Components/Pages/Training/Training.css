@@ -4,6 +4,7 @@
     gap: 2rem; 
     justify-content: center;
     align-items: center; 
+    background-color:rgb(240, 240, 240)
 }
 
 
@@ -17,7 +18,7 @@
 .training-cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 4rem;
     margin: 2rem 2rem;
     cursor: pointer;
@@ -25,13 +26,15 @@
   
   .training-card {
     width: calc(48% - 20px); 
+    max-width: 400px;
     color: black;
+    background-color: white;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -46,6 +49,8 @@
     height: auto;
     overflow: hidden;
     margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .card-content {
@@ -68,6 +73,24 @@
     
   }
 
+  .fs-txt-wa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fs-whatsappButton-train {
+    background-color: #27914e; 
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    animation: bounce 0.5s infinite alternate; 
+  }
+
   .fs-trainingText{
     margin:  20px;
     max-width: 1000px;
@@ -85,6 +108,15 @@
 
     .training-card {
         width: calc(80%); 
+        max-width: 800px;
+    }
+
+   .fullscreen-training{
+    flex-direction: column;
     }
     
+    .card-image-training img {
+      margin-left: 0;
+      width: 80vw;
+    }
   }

@@ -38,11 +38,11 @@ return (
           <Route path="/البرامج المصورة" element={<Programs category='البرامج المصورة' />} />
           <Route path="/البرامج الإذاعية" element={<Programs category='البرامج الإذاعية' />} />
           <Route path="/المقابلات" element={<Programs category='المقابلات' />} />
-          <Route path="/التدريب الشخصي و الإستشارات" element={<CalendlyApointment/>} />
+          <Route path="/التدريب الشخصي و الاستشارات" element={<CalendlyApointment/>} />
 
-          <Route path="/إستضافة هنادي" element={<InvitationForm />} />
+          <Route path="/استضافة هنادي" element={<InvitationForm />} />
 
-          {/* <Route path="/إستضافة هنادي" element={<InvitationForm invitationType='Presentation'/>} /> */}
+          {/* <Route path="/استضافة هنادي" element={<InvitationForm invitationType='Presentation'/>} /> */}
 
           <Route path="/fullscreen/:bookId" element={<FullScreenShop />} />
           <Route path="/fullscreen-training/:objectId"  element={<FullScreenTraining />} />

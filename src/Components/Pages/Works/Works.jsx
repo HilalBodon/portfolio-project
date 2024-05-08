@@ -18,8 +18,8 @@ const Works = () => {
         <div className="works">
             {/* leftside */}
             <div className="awesome-works">
-                <span> ماذا يقال</span>
-                <span>  عن عمل هنادي</span>
+                <span> شهادات </span>
+                <span>  شركاء العمل</span>
                 <span >
                     أهمية دورها في ان تُلهم وتُطور وتساعد في تفعيل الطاقات الشبابية في مجتمعاتنا العربية
                     <br />

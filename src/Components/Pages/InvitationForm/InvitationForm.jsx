@@ -329,7 +329,7 @@ const [successMessage, setSuccessMessage] = useState('');
           className={`submit-button ${loading ? 'loading' : ''}`}
           disabled={loading}
         >
-        {loading ? '...إرسال' : 'إرسال طلب الإستضافة'}
+        {loading ? '...ارسال' : 'ارسال طلب الإستضافة'}
       </button>
       {successMessage && <div className="success-message">{successMessage}</div>}
 

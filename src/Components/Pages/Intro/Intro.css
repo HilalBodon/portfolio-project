@@ -48,18 +48,31 @@ align-items: center;
 gap:  1rem;
 }
 
-.i-name>:nth-child(2){
-    font-weight: bold;
-    font-size: 2rem;
-}
-
 .i-name>:nth-child(1){
     color: var(--orange);
     font-weight: bold;
     font-size: 2.5rem;
 }
 
+.i-name>:nth-child(2){
+    font-weight: 100;
+    font-size: 2.2rem;
+    word-spacing: 10px;
+    color: rgb(204, 204, 204);
+}
+
 .i-name>:nth-child(3){
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.i-name>:nth-child(4){
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+
+.i-name>:nth-child(5){
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.8;
@@ -135,11 +148,17 @@ scale: 1.1;
     background-color: white;
 }
 
+.intro-testimonial{
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 @media screen and (max-width:800px) {
     .intro{
     flex-direction: column;
     /* height: 64rem; */
-    gap: 4rem;
+    /* gap: 4rem; */
     }
 
     .intro-intro{

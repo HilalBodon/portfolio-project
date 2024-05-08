@@ -130,10 +130,11 @@ border-radius: 100%;
 
 
 .t-heading{
-    color: black;
     text-align:  center;
     padding-top: 2rem;
-    font-size: 2rem;
+    color: var(--orange);
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .blog-cards-container {

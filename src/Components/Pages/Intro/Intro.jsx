@@ -7,6 +7,8 @@ import Shop from '../Shop/Shop'
 import Contact from '../../Contact/Contact'
 import defaultImg from '../../../img/hanadiLogo.png'
 import LoadingSpinner from '../../LoadingSpinner';
+import Training from '../Training/Training';
+import Testimonials from '../Testimonials/Testimonials';
 
 const BaseURL = process.env.REACT_APP_BASE_URL;
 const Headers = {
@@ -105,8 +107,9 @@ const Intro =() =>{
         <div className="i-left">
             <div className="i-name">
                 <span> هنادي الشيخ نجيب</span>
-                <span >  محاضِرة ومتحدثة تحفيزية ومدربة اجتماعية ومُقَدِّمة برامج إعلامية
-                 </span> 
+                <span> خبيرة الجودة الشخصية</span>
+                <span >  محاضِرة ومتحدثة تحفيزية ومدربة </span> 
+                   <span>مؤلفة ومُعدة ومُقَدِّمة برامج إعلامية </span> 
                  <div>
                  على مدى أكثر من 25 عاماً عملت هنادي الشيخ نجيب كمحاضرة ومتحدثة تحفيزية ومدربة وكاتبة ومؤلفة، ومعدة ومقدمة برامج إعلامية، وتواصلت مع شريحة كبيرة من الشباب تزيد عن 100 ألف من لبنان وخارجه، حيث قدمت منتجاتها الفكرية والإعلامية والتدريبية  لقطاعات مختلفة في المجتمع، من الجامعات والمدارس والثانويات، مراكز التدريب، الأندية الشبابية والكشفية، الروابط والاتحادات التدريبية، المؤسسات الإعلامية، المؤتمرات والمعارض، مؤسسات المجتمع المدني، الجمعيات النسائية والفعاليات الخيرية والاجتماعية.
                     </div>     
@@ -135,8 +138,11 @@ const Intro =() =>{
 
         </div>
         </div>
-
-        <Works/>
+        {/* <Works/> */}
+        <div className='intro-testimonial'>
+        <Testimonials/>
+        </div>
+        <Training/>
 
         <div >
         <Shop/>

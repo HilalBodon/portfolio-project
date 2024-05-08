@@ -86,7 +86,7 @@ const Training = () => {
     <div className="t-wrapper" id='Training'>
        {!imageLoaded && <LoadingSpinner />}
       <div className="t-heading" ref={featuredTrainingRef}>
-        <span>الدورات المتاحة</span>
+        <span>الدورات القادمة</span>
       </div>
 
       <div className="training-cards-container">

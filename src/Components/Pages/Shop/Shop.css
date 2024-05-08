@@ -34,10 +34,13 @@
     font-size: 2.5rem;
     font-weight: bold;
 }
-.categoryName{
-    color: black;
+.categoryName-books{
     padding: 2rem;
     text-align: center;
+    color: var(--orange);
+    font-size: 2.5rem;
+    font-weight: bold;
+
 }
 
 
@@ -80,6 +83,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    text-align: right;
     font-weight: 600;
     margin-bottom: 1rem;
     position: relative;
@@ -201,7 +205,8 @@
   }
 
   .fs-whatsappButton {
-    background-color: #25d366; 
+    /* background-color: #25d366;  */
+    background-color: #27914e; 
     color: white;
     padding: 10px 20px;
     border: none;

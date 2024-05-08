@@ -277,7 +277,7 @@ const Blog = () => {
     <div className="t-wrapper" id='Blog'>
        {!imageLoaded && <LoadingSpinner />}
       <div className="t-heading" ref={featuredBlogRef}>
-        <span>مقالاتي الشخصية</span>
+        <span>المقالات</span>
       </div>
 
       <div className="blog-cards-container">
@@ -307,46 +307,3 @@ const Blog = () => {
 };
 
 export default Blog;
-
-
-
-
-
-
-{/* <div className="featuredBlog">
-  {selectedBlog ? (
-    <>
-      {loadingFeaturedImage ? (
-        <LoadingSpinner />
-      ) : (
-        <>
-          <img
-            src={selectedBlog.images?.untitled[0]?.dir + selectedBlog.images?.untitled[0]?.imageax1000 || defaultImg}
-            alt="featured-blog"
-            onError={(e) => {
-              e.target.src = defaultImg;
-            }}
-          />
-          <span>{selectedBlog.blog_content}</span>
-          <div dangerouslySetInnerHTML={{ __html: selectedBlog.content }} />
-          <p>{modifyDate(selectedBlog.createdAt)}</p>
-        </>
-      )}
-    </>
-  ) : featuredBlogData.length > 0 ? (
-    <>
-      <img
-        src={featuredBlogData[0].images?.untitled[0]?.dir + featuredBlogData[0].images?.untitled[0]?.imageax1000 || defaultImg}
-        alt="featured-blog"
-        onError={(e) => {
-          e.target.src = defaultImg;
-        }}
-      />
-      <span>{featuredBlogData[0].blog_content}</span>
-      <div dangerouslySetInnerHTML={{ __html: featuredBlogData[0].content }} />
-      <p>{modifyDate(featuredBlogData[0].createdAt)}</p>
-    </>
-  ) : (
-    <LoadingSpinner />
-  )}
-</div> */}

@@ -10,6 +10,28 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
+
+    .name {
+      white-space: nowrap; /* Prevent text from wrapping */
+      overflow: hidden; /* Hide overflow text */
+      text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
+      max-width: 100%; /* Set maximum width */
+      cursor: pointer; /* Change cursor to indicate hover effect */
+    }
+    
+    .name:hover {
+      overflow: visible; /* Show overflow text on hover */
+      white-space: normal; /* Allow text to wrap on hover */
+      z-index: 999; /* Ensure tooltip is displayed above other elements */
+      position: relative; /* Position tooltip relative to its parent */
+      /* Additional styling for tooltip */
+      background-color: #fff; /* Background color of tooltip */
+      border: 1px solid #ccc; /* Border of tooltip */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect of tooltip */
+      padding: 5px; /* Padding of tooltip */
+    }
+    
+  
   
   @keyframes slideUp {
     from {
@@ -33,18 +55,18 @@
     opacity: 0.9;
   }
 
-.programs span:nth-of-type(1){
+/* .programs span:nth-of-type(1){
     color: black;
     font-size: 2rem;
     font-weight: bold;
-} 
+}  */
 
-.programs span:nth-of-type(2){
+.programs span:nth-of-type(1){
     color: var(--orange);
     font-size: 2.5rem;
     font-weight: bold;
 }
-.categoryName{
+.categoryName-programs{
     color: black;
     padding: 2rem;
     text-align: center;

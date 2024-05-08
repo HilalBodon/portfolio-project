@@ -88,7 +88,7 @@ const Shop = () => {
 
     return Object.entries(categories).map(([category, books]) => (
       <div className='swiper-container' key={category}>
-        <h2 className='categoryName'>{category}</h2>
+        <h2 className='categoryName-books'>{category}</h2>
         <Swiper {...swiperConfig}>
           {books.map(book => (
             <SwiperSlide key={book.objectId}>
@@ -118,11 +118,11 @@ const Shop = () => {
 
   return (
     <div className="m-books">
-        {isStorePage && (
+        {/* {isStorePage && (
       <div className="books">
         <span> &nbsp; الدورات </span>
         <span> والكتب </span>
-      </div>)}
+      </div>)} */}
 
       {loading ? (
         <LoadingSpinner />
