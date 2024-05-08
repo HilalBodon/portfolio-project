@@ -111,8 +111,9 @@ const Testimonials = () => {
   };
 
   return (
-    // <div className='testimonials-container'>
+
     <Swiper {...swiperConfig}>
+        
       {testimonials.map((testimonial, index) => (
         <SwiperSlide key={index} className="testimonial">
           <img
@@ -137,7 +138,6 @@ const Testimonials = () => {
         </SwiperSlide>
       ))}
     </Swiper>
-    // </div>
   );
 };
 
