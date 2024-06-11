@@ -68,7 +68,7 @@ const FullscreenTraining = () => {
           {/* <h2>{selectedTraining.Title}</h2> */}
           <div className='fs-txt-wa'>
           <div dangerouslySetInnerHTML={{ __html: selectedTraining.Content }} className="fs-trainingText" />
-          <button  className="fs-whatsappButton-train" onClick={handleRedirect}><FaWhatsapp/> احجز مقعدك</button>
+          <button  className="fs-whatsappButton-train" onClick={handleRedirect}><FaWhatsapp/> سجل الآن</button>
           </div>
         </>
       )}

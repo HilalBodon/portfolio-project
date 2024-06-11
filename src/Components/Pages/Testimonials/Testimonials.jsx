@@ -106,14 +106,20 @@ const Testimonials = () => {
     navigation: true,
     pagination: true,
     autoplay: {
-      delay: 3000, 
+    delay: 4000, 
     },
   };
 
   return (
 
-    <Swiper {...swiperConfig}>
-        
+    <Swiper {...swiperConfig}
+          onSwiper={(swiper) => {
+          swiper.el.onmouseenter = () => swiper.autoplay.stop();
+          swiper.el.onmouseleave = () => swiper.autoplay.start();
+          swiper.el.ontouchstart = () => swiper.autoplay.stop();
+          swiper.el.ontouchend = () => swiper.autoplay.start();
+        }}
+        >
       {testimonials.map((testimonial, index) => (
         <SwiperSlide key={index} className="testimonial">
           <img

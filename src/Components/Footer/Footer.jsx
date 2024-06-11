@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import Wave from '../../img/wave.png'
-import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 
 import Logo from '../../img/darkHanadiLogo.png'
 // import { Link } from 'react-router-dom'; 
@@ -14,19 +14,24 @@ const Footer = () => {
         {/* <img src={Wave} alt="wave" style={{width:'100%'}} /> */}
         <div className="f-content">
         <div className="f-icons">
-                <a href="https://www.facebook.com/profile.php?id=100086631892117&mibextid=b06tZ0" target='_blank' rel="noreferrer noopener">
+                <a href="https://www.facebook.com/hanadisheikhnajib.fb" target='_blank' rel="noreferrer noopener">
                 <FaFacebook />
                 </a>
-                <a href="https://www.youtube.com/@hanadicheikhnajib" target='_blank' rel="noreferrer noopener">
+                <a href="https://www.youtube.com/@hanadisheikhnajib" target='_blank' rel="noreferrer noopener">
                 <FaYoutube />
                 </a>    
-                <a href="https://instagram.com/hanadicheikhnajib?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target='_blank' rel="noreferrer noopener">
+                <a href="https://www.instagram.com/hanadisheikhnajib/" target='_blank' rel="noreferrer noopener">
                 <FaInstagram />
                 </a>
                 <a href="https://wa.me/96171553688" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp/>
                 </a>
-
+                <div className="email-container">
+                <a href="mailto:info@hanadisheikhnajib.com" target="_blank" rel="noopener noreferrer">
+                <FaEnvelope/>
+                </a>
+                <span className="tooltip">info@hanadisheikhnajib.com</span>
+                </div>
             </div>
             <div className='experience-div'>
               <div className='f-desc'>

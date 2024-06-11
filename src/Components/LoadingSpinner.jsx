@@ -13,7 +13,7 @@ const LoadingSpinner = () => {
         height: "80vh",
       }}
     >
-      <RingLoader	 color="#C87167" loading={true} size={100} />
+      <RingLoader	 color="darkcyan" loading={true} size={100} />
     </div>
   );
 };

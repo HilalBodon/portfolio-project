@@ -1,7 +1,7 @@
 
 
   .footer {
-    background: var(--black);
+    background: var(--orange);
     color: whitesmoke;
 }
 
@@ -10,6 +10,46 @@
     display: flex;
     gap: 0rem;
 }
+
+
+.email-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: darkslategray;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 90%; /* Adjust this value as needed */
+  left: 1%;
+  margin-left: -60px; /* Adjust this value to center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.email-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
 
 .f-icons>*{
 }
@@ -48,7 +88,7 @@ scale: 1.1;
 
 .f-icons{
     display: flex;
-    gap: 2rem;
+    /* gap: 5px; */
 }
 
 .f-logo{
@@ -80,4 +120,16 @@ height: 7rem;
     .f-content>*{
         transform: scale(0.9);
     }
+
+    .f-icons{
+      transform: scale(0.7);
+
+    }
+    .f-icons>a*{
+      font-size: 2rem;
+    }
+    .footer .f-content{
+      gap:0;
+    }
+
 }

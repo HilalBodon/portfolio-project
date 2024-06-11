@@ -31,7 +31,8 @@ body > div {
     --orangeCard: rgba(252, 167, 31, 0.358);
     --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
     --darkPurple : #752298;
-    --orange :#C87167;
+    /* --orange :#C87167; */
+    --orange : darkcyan
 
 }
 
@@ -50,7 +51,7 @@ body > div {
   color: white;
   font-size: 24px;
   padding: 14px 24px;
-  background: var(--black);
+  background: darkcyan;
 
 }
 

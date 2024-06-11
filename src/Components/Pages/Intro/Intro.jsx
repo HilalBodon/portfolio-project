@@ -119,14 +119,15 @@ const Intro =() =>{
                 </a>
 
             <div className="i-icons">
-                <a href="https://www.facebook.com/profile.php?id=100086631892117&mibextid=b06tZ0" target='_blank' rel="noreferrer noopener">
+                <a href="https://www.facebook.com/hanadisheikhnajib.fb" target='_blank' rel="noreferrer noopener">
                 <FaFacebook />
                 </a>
-                <a href="https://www.youtube.com/@hanadicheikhnajib" target='_blank' rel="noreferrer noopener">
+                <a href="https://www.youtube.com/@hanadisheikhnajib" target='_blank' rel="noreferrer noopener">
                 <FaYoutube />
                 </a>    
-                <a href="https://instagram.com/hanadicheikhnajib?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target='_blank' rel="noreferrer noopener">
+                <a href="https://www.instagram.com/hanadisheikhnajib/" target='_blank' rel="noreferrer noopener">
                 <FaInstagram />
+                
                 </a>
 
             </div>
