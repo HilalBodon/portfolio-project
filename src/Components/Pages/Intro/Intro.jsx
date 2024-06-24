@@ -2,6 +2,7 @@ import React, { useEffect , useState, useRef} from 'react'
 import axios from 'axios'
 import './Intro.css'
 import { FaFacebook, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
+import instagram from '../../../img/instagram.svg'
 import Works from '../Works/Works'
 import Shop from '../Shop/Shop'
 import Contact from '../../Contact/Contact'
@@ -126,7 +127,7 @@ const Intro =() =>{
                 <FaYoutube />
                 </a>    
                 <a href="https://www.instagram.com/hanadisheikhnajib/" target='_blank' rel="noreferrer noopener">
-                <FaInstagram />
+                <img src={instagram}></img>
                 
                 </a>
 

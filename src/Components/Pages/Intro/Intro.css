@@ -93,6 +93,13 @@ color: black;
     gap: 0rem;
 }
 
+.i-icons a>*{
+
+    margin: 1rem;
+    font-size: 3rem;
+    /* border-radius: 50%; */
+}
+
 .i-icons>:nth-child(1){
 color: #3b5998;
 }
@@ -101,23 +108,14 @@ color: #3b5998;
     color: #FF0000;
     }
 
-/* .i-icons a>:nth-child(3) {
-    color: white;
-    color: linear-gradient(
-        to right,
-        white,#fd1d1d,#fcb045
-    );
-    }  */
+
     .i-icons > :nth-child(3) {
-    color:mediumorchid;
-      }
+        width: auto;
+    }
 
-.i-icons a>*{
 
-    margin: 1rem;
-    font-size: 3rem;
-    border-radius: 50%;
-}
+
+
 
 
 .i-icons>*:hover{

@@ -256,7 +256,7 @@ function Navbar() {
         </Link>
 
         {windowWidth < 780 && !isMainUrl && (
-          <div className='back-bitton-div'>
+          <div className='back-button-div'>
           <button onClick={handleGoBack} className="back-button">
             <FaArrowLeft />
           </button>

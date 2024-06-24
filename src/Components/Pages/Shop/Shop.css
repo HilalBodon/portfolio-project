@@ -70,7 +70,7 @@
     width: 20vw;
     max-width: 350px;
     min-width: 200px;
-    height: 55vh;
+    height: 50vh;
     filter: drop-shadow(-12px 15px 13px rgba(0,0,0, 0.25));
     border-radius: 8px;
 }

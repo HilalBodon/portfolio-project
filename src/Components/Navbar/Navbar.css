@@ -19,7 +19,7 @@
 }
 .navbar-logo img:nth-child(1){
   height: 60px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .navbar-logo img:nth-child(2){
   height: 55px;
@@ -172,7 +172,7 @@
   }
 }
 
-.back-bitton-div{
+.back-button-div{
   margin-left: auto;
   }
 .back-button {
